@@ -37,10 +37,17 @@ url: "https://CubNavarro.github.io" # the base hostname & protocol for your site
 baseurl: "/Tri2GroupFastpages" # the subpath of your site, e.g. "/blog".
 
 # Github and twitter are optional:
+# Github and twitter are optional:
 minima:
+  skin: dark
+  #  social_links:
+  #    twitter: NighthawkCoding
+  #    github: nighthawkcoders
+  #   youtube_channel: UClIKOsDS5dsfzFA3zveDT3Q
   social_links:
-    twitter: fastdotai
-    github: fastai
+    - { platform: github, user_url: ”
+https://github.com/CubNavarro
+“}
 
 # Set this to true to get LaTeX math equation support
 use_math: 
