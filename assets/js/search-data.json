@@ -2,10 +2,10 @@
   
     
         "post0": {
-            "title": "Calling Procedures 3.12",
-            "content": "A $80 item recives a 20% discount and a tax is 8% . PROCEDURE applyDiscount (cost, cpercentDiscounted) { temp &lt;-- 100 - percentDiscounted . temp &lt;-- temp / 100 cost &lt;-- cost x temp Print(cost) . } . PROCEDURE applytax (cost, cpercentDiscounted) { temp &lt;-- 100 + percentTaxed . temp &lt;-- temp / 100 cost &lt;-- cost x temp Print(cost) . } . Tempature Procedure . This procedure is used to Convet Fehrenheit to Celsius . What is 80 degrees in Celcsius? . PROCEDURE convet Fahrenheit (tempature) { Celsius &lt;-- tempature - 32 Celsius &lt;-- Celsius x 5/9 Print (Celsius) } . Drawing Squares . Procedure Call . drawsquare (xPos, yPos, sidelength) . This draws a square starting in the bottom left corner (xPos, yPos) on the grid with the sidelength . x &lt;-- 2 y &lt;--3 s &lt;-- 4 drawSquare(x,y,s) . x &lt;-- x+2 y &lt;-- y-1 . drawSqaure(x,y,s) .",
-            "url": "https://cubnavarro.github.io/Tri2GroupFastpages/markdown/2022/12/06/Calling-procesurespart2.html",
-            "relUrl": "/markdown/2022/12/06/Calling-procesurespart2.html",
+            "title": "Hackathon!",
+            "content": "#### Now it is time to know what you know about procedures so with your table group you guys are going to write procedures for a chance of winning a prize . You will need 1 laptop | You and Your Group will have the maximum of 5 minuets to complete this prompt | Open a File or a Place to code a procedure | In order to gain points you must get the procedure right and have all correct elements of a procedure | If you finish first and its correct 2pts | If you finish within the 5 miniuets and you are correct 1 pt | You can only get your answer checked 2 times if you get it wrong both times its checked you automatically fail the challenge for that prompt. | . Prompt #1 . Write A Procedure to get the character to the finish line | . Prompt 2 . Get the Person to the red block by writing a coding procedure | . # Prompt 3 . Write a Procedure that updates a the quiz score if you get a better score on the next quiz use these VARIABLES: INITAL SCORE = 25 RETAKE SCORE 56 OUR OF 60 Points | .",
+            "url": "https://cubnavarro.github.io/Tri2GroupFastpages/markdown/2022/12/06/hackathon.html",
+            "relUrl": "/markdown/2022/12/06/hackathon.html",
             "date": " • Dec 6, 2022"
         }
         
@@ -15,31 +15,31 @@
         ,"post1": {
             "title": "3.13-3.14 Homework/Hacks",
             "content": "",
-            "url": "https://cubnavarro.github.io/Tri2GroupFastpages/markdown/2022/12/05/3.13-3.14-homework.html",
-            "relUrl": "/markdown/2022/12/05/3.13-3.14-homework.html",
-            "date": " • Dec 5, 2022"
+            "url": "https://cubnavarro.github.io/Tri2GroupFastpages/markdown/2022/12/06/3.13-3.14-homework.html",
+            "relUrl": "/markdown/2022/12/06/3.13-3.14-homework.html",
+            "date": " • Dec 6, 2022"
         }
         
     
   
     
         ,"post2": {
-            "title": "Hackathon!",
-            "content": "#### Now it is time to know what you know about procedures so with your table group you guys are going to write procedures for a chance of winning a prize . You will need 1 laptop | You and Your Group will have the maximum of 5 minuets to complete this prompt | Open a File or a Place to code a procedure | In order to gain points you must get the procedure right and have all correct elements of a procedure | If you finish first and its correct 2pts | If you finish within the 5 miniuets and you are correct 1 pt | You can only get your answer checked 2 times if you get it wrong both times its checked you automatically fail the challenge for that prompt. | . Prompt #1 . Write A Procedure to get the character to the finish line | . Prompt 2 . Get the Person to the red block by writing a coding procedure | . # Prompt 3 . Write a Procedure that updates a the quiz score if you get a better score on the next quiz use these VARIABLES: INITAL SCORE = 25 RETAKE SCORE 56 OUR OF 60 Points | .",
-            "url": "https://cubnavarro.github.io/Tri2GroupFastpages/markdown/2022/12/04/hackathon.html",
-            "relUrl": "/markdown/2022/12/04/hackathon.html",
-            "date": " • Dec 4, 2022"
+            "title": "Developing Procedures 3.13 Part 2",
+            "content": "Essential Knowledge . Procedure-is a named group of programming instructions that serves a purpose | How to code Procedures-While Coding a procedure you must makes sure it has as name and a clear purpose weather to executre a response or complete an action | One common type of abstraction is procedrual abstraction, which provides a name for a process and allows a procedure to be only knowing what it doe,not how it does it. | The subdivision of a computer program into sepearate subprogrames is called modularity, | . How do we make our procedure purposeful and consice . to make a procedure serve a purpose it should be able to hae multiple functions | Also to keep a procedure maximizing capability it should be simple and reduced to get the final result | . What is important to do while writing procedures . It is important to understand you procudeures procedure does when creating one as it will help you create a impactful procedure | . Procedure That Update Grade Based on retake . after you take a quiz your teacher lets you retake it for full credit in which your are able to replace your grade | TEST WITH first quiz GRADE is 40% and second is 90% | PROCEDURE updateGRADE { points, current grade,new grade currentGrade = current points /75 | currentGrade = current crade * 100 if currentGrade &gt; quizGrade | return currentGrade } | . | . | . How to change your procedures to add more elements into it . First we start off with this coding segment which shows us what we need to do Suppse we use numbers 74 35 40 | | . PROCEDURE updateQuiz (74,35,40) { | temp average = 0.875 | tempAverage = 87.5 | 87.5&gt;74 True } | This will return 87.5 | However Suppose we CANNOT accept decimals how would we do this? | . Update Function . | . Why are Procedures Important . Procedures are significant in a program as they can be manipulated to complete tasks and function as you saw with the previous problem. | .",
+            "url": "https://cubnavarro.github.io/Tri2GroupFastpages/markdown/2022/12/05/3.13-part2.html",
+            "relUrl": "/markdown/2022/12/05/3.13-part2.html",
+            "date": " • Dec 5, 2022"
         }
         
     
   
     
         ,"post3": {
-            "title": "Developing Procedures 3.13 Part 2",
-            "content": "Essential Knowledge . Procedure-is a named group of programming instructions that serves a purpose | How to code Procedures-While Coding a procedure you must makes sure it has as name and a clear purpose weather to executre a response or complete an action | One common type of abstraction is procedrual abstraction, which provides a name for a process and allows a procedure to be only knowing what it doe,not how it does it. | The subdivision of a computer program into sepearate subprogrames is called modularity, | . How do we make our procedure purposeful and consice . to make a procedure serve a purpose it should be able to hae multiple functions | Also to keep a procedure maximizing capability it should be simple and reduced to get the final result | . What is important to do while writing procedures . It is important to understand you procudeures procedure does when creating one as it will help you create a impactful procedure | . Procedure That Update Grade Based on retake . after you take a quiz your teacher lets you retake it for full credit in which your are able to replace your grade | TEST WITH first quiz GRADE is 40% and second is 90% | PROCEDURE updateGRADE { points, current grade,new grade currentGrade = current points /75 | currentGrade = current crade * 100 if currentGrade &gt; quizGrade | return currentGrade } | . | . | . How to change your procedures to add more elements into it . First we start off with this coding segment which shows us what we need to do Suppse we use numbers 74 35 40 | | . PROCEDURE updateQuiz (74,35,40) { | temp average = 0.875 | tempAverage = 87.5 | 87.5&gt;74 True } | This will return 87.5 | However Suppose we CANNOT accept decimals how would we do this? | . Update Function . | . Why are Procedures Important . Procedures are significant in a program as they can be manipulated to complete tasks and function as you saw with the previous problem. | .",
-            "url": "https://cubnavarro.github.io/Tri2GroupFastpages/2022/12/01/3.13-developing-procedures-vid2.ipynb.html",
-            "relUrl": "/2022/12/01/3.13-developing-procedures-vid2.ipynb.html",
-            "date": " • Dec 1, 2022"
+            "title": "Calling Procedures 3.12 Part 2",
+            "content": "A $80 item recives a 20% discount and a tax is 8% . PROCEDURE applyDiscount (cost, cpercentDiscounted) { temp &lt;-- 100 - percentDiscounted . temp &lt;-- temp / 100 cost &lt;-- cost x temp Print(cost) . } . PROCEDURE applytax (cost, cpercentDiscounted) { temp &lt;-- 100 + percentTaxed . temp &lt;-- temp / 100 cost &lt;-- cost x temp Print(cost) . } . Tempature Procedure . This procedure is used to Convet Fehrenheit to Celsius . What is 80 degrees in Celcsius? . PROCEDURE convet Fahrenheit (tempature) { Celsius &lt;-- tempature - 32 Celsius &lt;-- Celsius x 5/9 Print (Celsius) } . Drawing Squares . Procedure Call . drawsquare (xPos, yPos, sidelength) . This draws a square starting in the bottom left corner (xPos, yPos) on the grid with the sidelength . x &lt;-- 2 y &lt;--3 s &lt;-- 4 drawSquare(x,y,s) . x &lt;-- x+2 y &lt;-- y-1 . drawSqaure(x,y,s) .",
+            "url": "https://cubnavarro.github.io/Tri2GroupFastpages/markdown/2022/12/04/3.12-part2.html",
+            "relUrl": "/markdown/2022/12/04/3.12-part2.html",
+            "date": " • Dec 4, 2022"
         }
         
     
