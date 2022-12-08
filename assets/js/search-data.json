@@ -3,7 +3,7 @@
     
         "post0": {
             "title": "3.12-3.13 Homework/Hacks",
-            "content": "3.12 Homework/Hacks . 3.13 Homework/Hacks .",
+            "content": "3.12 Homework/Hacks . 3.13 Homework/Hacks . 1 Create a procedure that is meant to replace .",
             "url": "https://cubnavarro.github.io/Tri2GroupFastpages/markdown/2022/12/07/3.13-3.14-homework.html",
             "relUrl": "/markdown/2022/12/07/3.13-3.14-homework.html",
             "date": " • Dec 7, 2022"
@@ -36,7 +36,7 @@
     
         ,"post3": {
             "title": "3.13 Developing Procedures Part 1",
-            "content": "Learning Objective . Develop procedural abstraction to manage a program by writing procedures | . Essential Knowledge . Procedure: is a named group of programming instructions that serves a purpose | Parameter: are input values of a procedur | There are two types of procedures, one that returns a value or some type of data and on that just executes a block of statements | . Creating a Procedure . When you are picking a name for the procedure it must be descriptive | See if you need any parameters for this procedure (what data do you need to accomplish my goal? What king of information am I going to need?) | 2 of the parameters in the example below could be the quizGrade and currentPoints (need this data) | . Example . If you retake a quiz and you get a higher grade than your original grade then your quiz grade will update to the recent grade | At the end of this you want to return quizGrade | . Try it yourself . 1. Write a procedure that will rotate the robot below 180 degrees. . Tips: give it a descriptive name and use ROTATE_RIGHT() or ROTATE_LEFT() to turn left or right . 2. Write a procedure that will allow the robot to detour around the block by going to the left. . Tips: use the tips in the previous problems and Use MOVE_FOWARD() to more one spot foward . Answer . . | . |",
+            "content": "Learning Objective . Develop procedural abstraction to manage a program by writing procedures | . Essential Knowledge . Procedure: is a named group of programming instructions that serves a purpose | Parameter: are input values of a procedur | There are two types of procedures, one that returns a value or some type of data and on that just executes a block of statements | . Creating a Procedure . When you are picking a name for the procedure it must be descriptive | See if you need any parameters for this procedure (what data do you need to accomplish my goal? What king of information am I going to need?) | 2 of the parameters in the example below could be the quizGrade and currentPoints (need this data) | . Example . If you retake a quiz and you get a higher grade than your original grade then your quiz grade will update to the recent grade | . Try it yourself . 1. Write a procedure that will rotate the robot below 180 degrees. . Tips: give it a descriptive name and use ROTATE_RIGHT() or ROTATE_LEFT() to turn left or right . 2. Write a procedure that will allow the robot to detour around the block by going to the left. . Tips: use the tips in the previous problems and Use MOVE_FOWARD() to more one spot foward . Answer . . | . |",
             "url": "https://cubnavarro.github.io/Tri2GroupFastpages/markdown/2022/12/05/3.13-part1.html",
             "relUrl": "/markdown/2022/12/05/3.13-part1.html",
             "date": " • Dec 5, 2022"
