@@ -3,7 +3,7 @@
     
         "post0": {
             "title": "3.12-3.13 Homework/Hacks",
-            "content": "3.12 Homework/Hacks . 3.13 Homework/Hacks . 1 Create a procedure that is meant to replace .",
+            "content": "3.12 Homework/Hacks . 3.13 Homework/Hacks . #1. Create a procedure that is meant to replace the top running backs yards per game in one season if the current running back has more yards per game . Necessary Parameters: toprbyardspg(100), currentrbyards(1260), totalGames(12) | . Click for hint Refer back to 3.13 Developing Procedures Part 1 #2. Write a procedure that will allow the A+ to get to the 1, while avoiding the black boxes. . Use what you learned about moving robots . . Click for hint Refer back to 3.13 Developing Procedures Part 1",
             "url": "https://cubnavarro.github.io/Tri2GroupFastpages/markdown/2022/12/07/3.13-3.14-homework.html",
             "relUrl": "/markdown/2022/12/07/3.13-3.14-homework.html",
             "date": " • Dec 7, 2022"
