@@ -26,8 +26,8 @@
 </table>
 <br>
 <!-- Daily Tasks are displayed-->
-<div id="days"></div>
-<div id="tasks"></div>
+<div id="Days"></div>
+<div id="Activities"></div>
 <br>
 <!-- Calender table-->
 <table>
@@ -52,10 +52,10 @@
 </table>
 <br>
 <script>
-  // The function to add workouts to your calender
+  // Add activities to your schedule
   function Add(){
     var input = document.getElementById("input").value;
-    var week = document.getElementById("week").value;
+    var Days = document.getElementById("week").value;
     switch (week) {
       case "Monday":
         var checkbox = document.createElement("check");
