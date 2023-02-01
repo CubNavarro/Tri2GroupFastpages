@@ -82,6 +82,17 @@
   
 
   
+      ,"page2": {
+          "title": "Schedule Maker",
+          "content": "Workout Calender . Helps you stay on top of your workouts | Gets you organized | Tracks your progress Editor Table . | . Type in Workout: Choose a Day: Apply Save . | Monday Tuesday Wednesday Thursday Friday Saturday Sunday | Apply | Save | . . . Monday Tuesday Wednesday Thursday Friday Saturday Sunday . | | | | | | | . .",
+          "url": "https://cubnavarro.github.io/Tri2GroupFastpages/markdown/",
+          "relUrl": "/markdown/",
+          "date": ""
+      }
+      
+  
+
+  
 
   
   
@@ -106,7 +117,7 @@
   
 
   
-      ,"page11": {
+      ,"page12": {
           "title": "",
           "content": "Sitemap: {{ “sitemap.xml” | absolute_url }} | .",
           "url": "https://cubnavarro.github.io/Tri2GroupFastpages/robots.txt",
