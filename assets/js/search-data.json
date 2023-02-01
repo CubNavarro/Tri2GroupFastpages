@@ -95,9 +95,6 @@
   
 
   
-  
-
-  
 
   
   
@@ -108,7 +105,6 @@
   
 
   
-  
 
   
   
@@ -117,7 +113,13 @@
   
 
   
-      ,"page12": {
+  
+
+  
+  
+
+  
+      ,"page13": {
           "title": "",
           "content": "Sitemap: {{ “sitemap.xml” | absolute_url }} | .",
           "url": "https://cubnavarro.github.io/Tri2GroupFastpages/robots.txt",
