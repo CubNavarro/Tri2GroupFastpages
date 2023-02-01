@@ -3,16 +3,16 @@ layout: page
 title: Schedule Maker
 permalink: /markdown/
 ---
-## Workout Calender
-  - Helps you stay on top of your workouts
-  - Gets you organized
-  - Tracks your progress
+## Schedule Maker
+  - Add your activities
+  - Organize
+  - Schedule time
 <br>
 ## Editor Table
 <!-- Editor table-->
 <table width="500px">
   <tr>
-    <th><label for="workout">Type in Workout:</label></th>
+    <th><label for="Activities">Activities:</label></th>
     <th><label for="weeks">Choose a Day:</label></th>
     <th>Apply</th>
     <th>Save</th>
@@ -62,7 +62,7 @@ permalink: /markdown/
 </table>
 <br>
 <script>
-  // The function to add workouts to your calender
+
   function Add(){
     var input = document.getElementById("input").value;
     var week = document.getElementById("week").value;
