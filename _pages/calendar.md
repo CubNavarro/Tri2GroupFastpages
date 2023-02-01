@@ -1,16 +1,26 @@
+---
+layout: page
+title: Schedule Maker
+permalink: /markdown/
+---
+## Workout Calender
+  - Helps you stay on top of your workouts
+  - Gets you organized
+  - Tracks your progress
+<br>
 ## Editor Table
 <!-- Editor table-->
-<table width="300px">
+<table width="500px">
   <tr>
-    <th><label for="Activities">Activities:</label></th>
-    <th><label for="Days">Day:</label></th>
-    <th>Add</th>
-    <th>Save </th>
+    <th><label for="workout">Type in Workout:</label></th>
+    <th><label for="weeks">Choose a Day:</label></th>
+    <th>Apply</th>
+    <th>Save</th>
   </tr>
   <tr>
     <td><input id="input"></td>
     <td>
-      <select name="Week" id="week">
+      <select name="week" id="week">
         <option>Monday</option>
         <option>Tuesday</option>
         <option>Wednesday</option>
@@ -26,8 +36,8 @@
 </table>
 <br>
 <!-- Daily Tasks are displayed-->
-<div id="Days"></div>
-<div id="Activities"></div>
+<div id="days"></div>
+<div id="tasks"></div>
 <br>
 <!-- Calender table-->
 <table>
@@ -52,10 +62,10 @@
 </table>
 <br>
 <script>
-  // Add activities to your schedule
+  // The function to add workouts to your calender
   function Add(){
     var input = document.getElementById("input").value;
-    var Days = document.getElementById("week").value;
+    var week = document.getElementById("week").value;
     switch (week) {
       case "Monday":
         var checkbox = document.createElement("check");
@@ -102,12 +112,41 @@
     }
     tasks();
   }
-1:10
+  //displays the day for the first part of daily tasks
+  function displayDayOfWeek() {
+    var d = new Date();
+    var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    var day = days[d.getDay()];
+    document.getElementById("days").innerHTML = "Today is " + day + " these are your tasks:";
+  }
+  setInterval(displayDayOfWeek, 1000);
+  // takes the day and then grabs
+  function tasks() {
+    var d = new Date();
+    var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    var day = days[d.getDay()];
+    switch (day) {
+        case "Monday":
+            document.getElementById("tasks").innerText = document.getElementById("monday").innerText;
+            break;
+        case "Tuesday":
+            document.getElementById("tasks").innerText = document.getElementById("tuesday").innerText;
+            break;
+        case "Wednesday":
+            document.getElementById("tasks").innerText = document.getElementById("wednesday").innerText;
+            break;
+        case "Thursday":
+            document.getElementById("tasks").innerText = document.getElementById("thursday").innerText;
+            break;
+        case "Friday":
+            document.getElementById("tasks").innerText = document.getElementById("friday").innerText;
+            break;
+        case "Saturday":
+            document.getElementById("tasks").innerText = document.getElementById("saturday").innerText;
+            break;
+        case "Sunday":
+            document.getElementById("tasks").innerText = document.getElementById("sunday").innerText;
+            break;
+    }
+}
 </script>
-
-
-
-
-
-
-
