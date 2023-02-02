@@ -79,8 +79,8 @@ window.onload = wrap_img;
     <h2 id="schedule-maker">Schedule Maker</h2>
 <ul>
   <li>Add your activities</li>
-  <li>Organize</li>
-  <li>Schedule time
+  <li>Organize your activities</li>
+  <li>Schedule times for activities 
 <br />
     <h2 id="editor-table">Editor Table</h2>
     <!-- Editor table-->
@@ -110,12 +110,12 @@ window.onload = wrap_img;
     <td><button>Save</button></td>
   </tr>
 </table>
-<p><br />
-<!-- Daily Tasks are displayed--></p>
+<p><br /></p>
+
 <div id="days"></div>
-<div id="tasks"></div>
-<p><br />
-<!-- Calender table--></p>
+<div id="activities"></div>
+<p><br /></p>
+
 <table>
   <tr>
     <th>Monday</th>
@@ -192,7 +192,7 @@ function displayDayOfWeek() {
   var d = new Date();
   var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
   var day = days[d.getDay()];
-  document.getElementById("days").innerHTML = "Today is " + date ;
+  document.getElementById("days").innerHTML = "Today is " + day + " these are your tasks:";
 }
 setInterval(displayDayOfWeek, 1000);
 // takes the day and then grabs
