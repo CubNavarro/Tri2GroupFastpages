@@ -4,6 +4,8 @@ title: Schedule Maker
 permalink: /markdown/
 ---
 
+## Schedule Maker
+  
   - Add your activities
   - Organize your activities 
   - Schedule times for activities 
