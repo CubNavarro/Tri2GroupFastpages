@@ -10,7 +10,7 @@ permalink: /markdown/
   - Organize your activities 
   - Schedule times for activities 
 <br>
-## Create Your Schedule!
+## Create A Schedule!
 
 <table width="500px">
   <tr>
