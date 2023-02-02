@@ -116,7 +116,7 @@ function displayDayOfWeek() {
   var d = new Date();
   var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
   var day = days[d.getDay()];
-  document.getElementById("days").innerHTML = "Today is " + day + " these are your tasks:";
+  document.getElementById("days").innerHTML = "Today is " + date ;
 }
 setInterval(displayDayOfWeek, 1000);
 // takes the day and then grabs
@@ -148,5 +148,3 @@ function tasks() {
           break;
   }
 }
-
-</script>
