@@ -3,17 +3,18 @@ layout: page
 title: Schedule Maker
 permalink: /markdown/
 ---
-## Schedule Maker
+
   - Add your activities
   - Organize your activities 
   - Schedule times for activities 
 <br>
-## Editor Table
-<!-- Editor table-->
+## Create Your Schedule!
+
 <table width="500px">
   <tr>
     <th><label for="Activities">Activities:</label></th>
     <th><label for="weeks">Choose a Day:</label></th>
+    <th><label for="Time">Choose a Time:</label></th>
     <th>Apply</th>
     <th>Save</th>
   </tr>
@@ -29,6 +30,29 @@ permalink: /markdown/
         <option>Saturday</option>
         <option>Sunday</option>
       </select>
+     <select name="Times" id="Time">
+        <option>6:00 AM</option>
+        <option>7:00 AM</option>
+        <option>8:00 AM</option>
+        <option>9:00 AM</option>
+        <option>10:00 AM</option>
+        <option>11:00 AM</option>
+        <option>12:00 PM</option>
+        <option>1:00 PM</option>
+        <option>2:00 PM</option>
+        <option>3:00 PM</option>
+        <option>4:00 PM</option>
+        <option>5:00 PM</option>
+        <option>6:00 PM</option>
+        <option>7:00 PM</option>
+        <option>8:00 PM</option>
+        <option>9:00 PM</option>
+        <option>10:00 PM</option>
+        <option>11:00 PM</option>
+        <option>12:00 AM</option>
+
+      </select>
+      
     </td>
     <td><button onclick="Add()">Apply</button></td>
     <td><button>Save</button></td>
@@ -36,8 +60,8 @@ permalink: /markdown/
 </table>
 <br>
 
-<div id="days"></div>
-<div id="activities"></div>
+<div id="Days"></div>
+<div id="Activities"></div>
 <br>
 
 <table>
@@ -51,13 +75,13 @@ permalink: /markdown/
     <th>Sunday</th>
   </tr>
     <tr>
-    <td><div id="monday"></div></td>
-    <td><div id="tuesday"></div></td>
-    <td><div id="wednesday"></div></td>
-    <td><div id="thursday"></div></td>
-    <td><div id="friday"></div></td>
-    <td><div id="saturday"></div></td>
-    <td><div id="sunday"></div></td>
+    <td><div id="Monday"></div></td>
+    <td><div id="Tuesday"></div></td>
+    <td><div id="Wednesday"></div></td>
+    <td><div id="Thursday"></div></td>
+    <td><div id="Friday"></div></td>
+    <td><div id="Saturday"></div></td>
+    <td><div id="Sunday"></div></td>
   </tr>
 </table>
 <br>
