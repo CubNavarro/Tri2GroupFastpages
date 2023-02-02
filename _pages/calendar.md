@@ -3,9 +3,7 @@ layout: page
 title: Schedule Maker
 permalink: /markdown/
 ---
-
 ## Schedule Maker
-  
   - Add your activities
   - Organize your activities 
   - Schedule times for activities 
@@ -16,7 +14,6 @@ permalink: /markdown/
   <tr>
     <th><label for="Activities">Activities:</label></th>
     <th><label for="weeks">Choose a Day:</label></th>
-    <th><label for="Time">Choose a Time:</label></th>
     <th>Apply</th>
     <th>Save</th>
   </tr>
