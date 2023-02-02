@@ -1,0 +1,29 @@
+---
+toc:true
+layout: post
+permalink: /categories/
+title: Find Your Home
+search_exclude: true
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title> Pick Your House</title>
+
+</head>
+<body>
+   <h1>Hello, use this as a filter and feel free to scroll down in order to find the rest of </h1>
+   <input id="userInput">
+   <button onclick="myFunction()"> Submit </button>
+   <h1 id="message"></h1>
+   <style>
+       body {background-color:aliceblue; text-align: center; font-family: 'Times New Roman', Times, serif ;}
+   </style>
+   <script>
+       function myFunction() {
+           let userInput = document.querySelector("#userInput");
+           let message = document.querySelector("#message");
+           message.innerHTML = "Okay Great Choice You Will Be Staying at..." + userInput.value; 
+       }
+   </script>

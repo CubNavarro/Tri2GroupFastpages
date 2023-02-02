@@ -5,8 +5,8 @@ permalink: /markdown/
 ---
 ## Schedule Maker
   - Add your activities
-  - Organize
-  - Schedule time
+  - Organize your activities 
+  - Schedule times for activities 
 <br>
 ## Editor Table
 <!-- Editor table-->
@@ -35,11 +35,11 @@ permalink: /markdown/
   </tr>
 </table>
 <br>
-<!-- Daily Tasks are displayed-->
+
 <div id="days"></div>
-<div id="tasks"></div>
+<div id="activities"></div>
 <br>
-<!-- Calender table-->
+
 <table>
   <tr>
     <th>Monday</th>
@@ -148,5 +148,3 @@ function tasks() {
           break;
   }
 }
-
-</script>
