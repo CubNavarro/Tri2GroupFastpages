@@ -5,8 +5,8 @@ permalink: /markdown/
 ---
 ## Schedule Maker
   - Add your activities
-  - Organize
-  - Schedule time
+  - Organize your activities 
+  - Schedule times for activities 
 <br>
 ## Editor Table
 <!-- Editor table-->
@@ -35,11 +35,11 @@ permalink: /markdown/
   </tr>
 </table>
 <br>
-<!-- Daily Tasks are displayed-->
+
 <div id="days"></div>
-<div id="tasks"></div>
+<div id="activities"></div>
 <br>
-<!-- Calender table-->
+
 <table>
   <tr>
     <th>Monday</th>
@@ -116,7 +116,7 @@ function displayDayOfWeek() {
   var d = new Date();
   var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
   var day = days[d.getDay()];
-  document.getElementById("days").innerHTML = "Today is " + date ;
+  document.getElementById("days").innerHTML = "Today is " + day + " these are your tasks:";
 }
 setInterval(displayDayOfWeek, 1000);
 // takes the day and then grabs
