@@ -52,9 +52,7 @@ permalink: /markdown/
         <option>10:00 PM</option>
         <option>11:00 PM</option>
         <option>12:00 AM</option>
-
       </select>
-      
     </td>
     <td><button onclick="Add()">Apply</button></td>
     <td><button>Save</button></td>
