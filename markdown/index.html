@@ -105,16 +105,36 @@ window.onload = wrap_img;
         <option>Saturday</option>
         <option>Sunday</option>
       </select>
-    </td>
+     <select name="Times" id="Time">
+        <option>6:00 AM</option>
+        <option>7:00 AM</option>
+        <option>8:00 AM</option>
+        <option>9:00 AM</option>
+        <option>10:00 AM</option>
+        <option>11:00 AM</option>
+        <option>12:00 PM</option>
+        <option>1:00 PM</option>
+        <option>2:00 PM</option>
+        <option>3:00 PM</option>
+        <option>4:00 PM</option>
+        <option>5:00 PM</option>
+        <option>6:00 PM</option>
+        <option>7:00 PM</option>
+        <option>8:00 PM</option>
+        <option>9:00 PM</option>
+        <option>10:00 PM</option>
+        <option>11:00 PM</option>
+        <option>12:00 AM</option>
+    &lt;/td&gt;
     <td><button onclick="Add()">Apply</button></td>
     <td><button>Save</button></td>
-  </tr>
-</table>
-<p><br /></p>
+  &lt;/tr&gt;
+&lt;/table&gt;
+<br />
 
 <div id="Days"></div>
 <div id="Activities"></div>
-<p><br /></p>
+<br />
 
 <table>
   <tr>
@@ -136,7 +156,7 @@ window.onload = wrap_img;
     <td><div id="Sunday"></div></td>
   </tr>
 </table>
-<p><br />
+<br />
 <script>
   function Add(){
   var input = document.getElementById("input").value;
@@ -223,7 +243,8 @@ function tasks() {
           document.getElementById("tasks").innerText = document.getElementById("sunday").innerText;
           break;
   }
-}</script></p>
+}
+</script></select></td></tr></table>
 
   </div>
 
