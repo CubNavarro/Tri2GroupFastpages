@@ -29,6 +29,26 @@ permalink: /markdown/
         <option>Saturday</option>
         <option>Sunday</option>
       </select>
+     <select name="Times" id="Time">
+        <option>6:00 AM</option>
+        <option>7:00 AM</option>
+        <option>8:00 AM</option>
+        <option>9:00 AM</option>
+        <option>10:00 AM</option>
+        <option>11:00 AM</option>
+        <option>12:00 PM</option>
+        <option>1:00 PM</option>
+        <option>2:00 PM</option>
+        <option>3:00 PM</option>
+        <option>4:00 PM</option>
+        <option>5:00 PM</option>
+        <option>6:00 PM</option>
+        <option>7:00 PM</option>
+        <option>8:00 PM</option>
+        <option>9:00 PM</option>
+        <option>10:00 PM</option>
+        <option>11:00 PM</option>
+        <option>12:00 AM</option>
     </td>
     <td><button onclick="Add()">Apply</button></td>
     <td><button>Save</button></td>
