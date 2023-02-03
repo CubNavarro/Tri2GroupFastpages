@@ -85,18 +85,19 @@ permalink: /markdown/
   function Add(){
   var input = document.getElementById("input").value;
   var week = document.getElementById("week").value;
+  var time = document.getElementById("Time").value;
   switch (week) {
     case "Monday":
       var checkbox = document.createElement("check");
       checkbox.type = "checkbox";
       document.getElementById("monday").appendChild(checkbox);
-      document.getElementById("monday").innerText = input + " " + document.getElementById("monday").innerText;
+      document.getElementById("monday").innerText = input + " " + time + " " + document.getElementById("monday").innerText;
       break;
     case "Tuesday":
       var checkbox = document.createElement("check");
       checkbox.type = "checkbox";
       document.getElementById("tuesday").appendChild(checkbox);
-      document.getElementById("tuesday").innerText = input + " " + document.getElementById("tuesday").innerText;
+      document.getElementById("tuesday").innerText = input + " " + time + " " + document.getElementById("tuesday").innerText;
       break;
     case "Wednesday":
       var checkbox = document.createElement("check");
