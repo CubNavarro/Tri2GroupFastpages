@@ -186,44 +186,42 @@ window.onload = wrap_img;
       break;
   }
   tasks();
-}</script></p>
-
-<p>function displayDayOfWeek() {
-  var d = new Date();
-  var days = [“Sunday”, “Monday”, “Tuesday”, “Wednesday”, “Thursday”, “Friday”, “Saturday”];
-  var day = days[d.getDay()];
-  document.getElementById(“days”).innerHTML = “Today is “ + day + “ these are your tasks:”;
 }
-setInterval(displayDayOfWeek, 1000);</p>
-
-<p>function tasks() {
+function displayDayOfWeek() {
   var d = new Date();
-  var days = [“Sunday”, “Monday”, “Tuesday”, “Wednesday”, “Thursday”, “Friday”, “Saturday”];
+  var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  var day = days[d.getDay()];
+  document.getElementById("days").innerHTML = "Today is " + day + " these are your tasks:";
+}
+setInterval(displayDayOfWeek, 1000);
+function tasks() {
+  var d = new Date();
+  var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
   var day = days[d.getDay()];
   switch (day) {
-      case “Monday”:
-          document.getElementById(“tasks”).innerText = document.getElementById(“monday”).innerText;
+      case "Monday":
+          document.getElementById("tasks").innerText = document.getElementById("monday").innerText;
           break;
-      case “Tuesday”:
-          document.getElementById(“tasks”).innerText = document.getElementById(“tuesday”).innerText;
+      case "Tuesday":
+          document.getElementById("tasks").innerText = document.getElementById("tuesday").innerText;
           break;
-      case “Wednesday”:
-          document.getElementById(“tasks”).innerText = document.getElementById(“wednesday”).innerText;
+      case "Wednesday":
+          document.getElementById("tasks").innerText = document.getElementById("wednesday").innerText;
           break;
-      case “Thursday”:
-          document.getElementById(“tasks”).innerText = document.getElementById(“thursday”).innerText;
+      case "Thursday":
+          document.getElementById("tasks").innerText = document.getElementById("thursday").innerText;
           break;
-      case “Friday”:
-          document.getElementById(“tasks”).innerText = document.getElementById(“friday”).innerText;
+      case "Friday":
+          document.getElementById("tasks").innerText = document.getElementById("friday").innerText;
           break;
-      case “Saturday”:
-          document.getElementById(“tasks”).innerText = document.getElementById(“saturday”).innerText;
+      case "Saturday":
+          document.getElementById("tasks").innerText = document.getElementById("saturday").innerText;
           break;
-      case “Sunday”:
-          document.getElementById(“tasks”).innerText = document.getElementById(“sunday”).innerText;
+      case "Sunday":
+          document.getElementById("tasks").innerText = document.getElementById("sunday").innerText;
           break;
   }
-}</p>
+}</script></p>
 
 
   </div>
