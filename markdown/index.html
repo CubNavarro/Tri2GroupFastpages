@@ -64,7 +64,7 @@ window.onload = wrap_img;
           </span>
         </label>
 
-        <div class="trigger"><a class="page-link" href="/Tri2GroupFastpages/about/">About Me</a><a class="page-link" href="/Tri2GroupFastpages/categories/">Maps API</a><a class="page-link" href="/Tri2GroupFastpages/markdown/">Schedule Maker</a><a class="page-link" href="/Tri2GroupFastpages/search/">Search</a><a class="page-link" href="/Tri2GroupFastpages/categories/">Tags</a></div>
+        <div class="trigger"><a class="page-link" href="/Tri2GroupFastpages/about/">About Me</a><a class="page-link" href="/Tri2GroupFastpages/markdown/">Schedule Maker</a><a class="page-link" href="/Tri2GroupFastpages/categories/">Maps API</a><a class="page-link" href="/Tri2GroupFastpages/search/">Search</a><a class="page-link" href="/Tri2GroupFastpages/categories/">Tags</a></div>
       </nav></div>
 </header>
 <main class="page-content" aria-label="Content">
@@ -76,13 +76,15 @@ window.onload = wrap_img;
   </header>
 
   <div class="post-content">
-    ## Schedule Maker
-  - Add your activities
-  - Organize your activities
-  - Schedule times for activities
-<br>
-## Create A Schedule!
-
+    <h2 id="schedule-maker">Schedule Maker</h2>
+<ul>
+  <li>Add your activities</li>
+  <li>Organize your activities</li>
+  <li>Schedule times for activities
+<br />
+    <h2 id="create-a-schedule">Create A Schedule!</h2>
+  </li>
+</ul>
 
 <table width="500px">
   <tr>
@@ -92,7 +94,7 @@ window.onload = wrap_img;
     <th>Save</th>
   </tr>
   <tr>
-    <td><input id="input"></td>
+    <td><input id="input" /></td>
     <td>
       <select name="week" id="week">
         <option>Monday</option>
@@ -108,13 +110,11 @@ window.onload = wrap_img;
     <td><button>Save</button></td>
   </tr>
 </table>
-<br>
-
+<p><br /></p>
 
 <div id="Days"></div>
 <div id="Activities"></div>
-<br>
-
+<p><br /></p>
 
 <table>
   <tr>
@@ -127,16 +127,16 @@ window.onload = wrap_img;
     <th>Sunday</th>
   </tr>
     <tr>
-    <td><div id="Monday"></div></td>
-    <td><div id="Tuesday"></div></td>
-    <td><div id="Wednesday"></div></td>
-    <td><div id="Thursday"></div></td>
-    <td><div id="Friday"></div></td>
-    <td><div id="Saturday"></div></td>
-    <td><div id="Sunday"></div></td>
+    <td><div id="monday"></div></td>
+    <td><div id="tuesday"></div></td>
+    <td><div id="wednesday"></div></td>
+    <td><div id="thursday"></div></td>
+    <td><div id="friday"></div></td>
+    <td><div id="saturday"></div></td>
+    <td><div id="sunday"></div></td>
   </tr>
 </table>
-<br>
+<p><br />
 <script>
   function Add(){
   var input = document.getElementById("input").value;
@@ -176,7 +176,7 @@ window.onload = wrap_img;
       var checkbox = document.createElement("check");
       checkbox.type = "checkbox";
       document.getElementById("saturday").appendChild(checkbox);
-      document.getElementById("saturday").innerText = input + " " + document.getElementById("saturday").innerText;
+      document.getElementById("saturday").innerText = input + "time" + document.getElementById("saturday").innerText;
       break;
     case "Sunday":
       var checkbox = document.createElement("check");
@@ -186,48 +186,44 @@ window.onload = wrap_img;
       break;
   }
   tasks();
-}
-//displays the day for the first part of daily tasks
-function displayDayOfWeek() {
+}</script></p>
+
+<p>function displayDayOfWeek() {
   var d = new Date();
-  var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  var days = [“Sunday”, “Monday”, “Tuesday”, “Wednesday”, “Thursday”, “Friday”, “Saturday”];
   var day = days[d.getDay()];
-  document.getElementById("days").innerHTML = "Today is " + day + " these are your tasks:";
+  document.getElementById(“days”).innerHTML = “Today is “ + day + “ these are your tasks:”;
 }
-setInterval(displayDayOfWeek, 1000);
-// takes the day and then grabs
-function tasks() {
+setInterval(displayDayOfWeek, 1000);</p>
+
+<p>function tasks() {
   var d = new Date();
-  var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  var days = [“Sunday”, “Monday”, “Tuesday”, “Wednesday”, “Thursday”, “Friday”, “Saturday”];
   var day = days[d.getDay()];
   switch (day) {
-      case "Monday":
-          document.getElementById("tasks").innerText = document.getElementById("monday").innerText;
+      case “Monday”:
+          document.getElementById(“tasks”).innerText = document.getElementById(“monday”).innerText;
           break;
-      case "Tuesday":
-          document.getElementById("tasks").innerText = document.getElementById("tuesday").innerText;
+      case “Tuesday”:
+          document.getElementById(“tasks”).innerText = document.getElementById(“tuesday”).innerText;
           break;
-      case "Wednesday":
-          document.getElementById("tasks").innerText = document.getElementById("wednesday").innerText;
+      case “Wednesday”:
+          document.getElementById(“tasks”).innerText = document.getElementById(“wednesday”).innerText;
           break;
-      case "Thursday":
-          document.getElementById("tasks").innerText = document.getElementById("thursday").innerText;
+      case “Thursday”:
+          document.getElementById(“tasks”).innerText = document.getElementById(“thursday”).innerText;
           break;
-      case "Friday":
-          document.getElementById("tasks").innerText = document.getElementById("friday").innerText;
+      case “Friday”:
+          document.getElementById(“tasks”).innerText = document.getElementById(“friday”).innerText;
           break;
-      case "Saturday":
-          document.getElementById("tasks").innerText = document.getElementById("saturday").innerText;
+      case “Saturday”:
+          document.getElementById(“tasks”).innerText = document.getElementById(“saturday”).innerText;
           break;
-      case "Sunday":
-          document.getElementById("tasks").innerText = document.getElementById("sunday").innerText;
+      case “Sunday”:
+          document.getElementById(“tasks”).innerText = document.getElementById(“sunday”).innerText;
           break;
   }
-}
-
-
-
-
+}</p>
 
 
   </div>
