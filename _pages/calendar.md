@@ -114,7 +114,6 @@ permalink: /markdown/
   }
   tasks();
 }
-
 function displayDayOfWeek() {
   var d = new Date();
   var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
@@ -122,7 +121,6 @@ function displayDayOfWeek() {
   document.getElementById("days").innerHTML = "Today is " + day + " these are your tasks:";
 }
 setInterval(displayDayOfWeek, 1000);
-
 function tasks() {
   var d = new Date();
   var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
