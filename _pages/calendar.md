@@ -132,15 +132,15 @@ permalink: /markdown/
   }
   tasks();
 }
-//displays the day for the first part of daily tasks
-function displayDayOfWeek() {
+
+function displayDayofWeek() {
   var d = new Date();
   var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
   var day = days[d.getDay()];
   document.getElementById("days").innerHTML = "Today is " + day + " these are your tasks:";
 }
 setInterval(displayDayOfWeek, 1000);
-// takes the day and then grabs
+
 function tasks() {
   var d = new Date();
   var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
