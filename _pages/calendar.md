@@ -13,10 +13,9 @@ permalink: /markdown/
 
 <table width="500px">
   <tr>
-    <th><label for="Activities">Activities:</label></th>
-    <th><label for="weeks">Choose a Day:</label></th>
+    <th><label for="input">Activities:</label></th>
+    <th><label for="week">Choose a Day:</label></th>
     <th>Apply</th>
-    <th>Save</th>
   </tr>
   <tr>
     <td><input id="input"></td>
@@ -32,16 +31,9 @@ permalink: /markdown/
       </select>
     </td>
     <td><button onclick="Add()">Apply</button></td>
-    <td><button>Save</button></td>
   </tr>
 </table>
 <br>
-
-
-<div id="Days"></div>
-<div id="Activities"></div>
-<br>
-
 
 <table>
   <tr>
@@ -66,91 +58,9 @@ permalink: /markdown/
 <br>
 <script>
   function Add(){
-  var input = document.getElementById("input").value;
-  var week = document.getElementById("week").value;
-  switch (week) {
-    case "Monday":
-      var checkbox = document.createElement("check");
-      checkbox.type = "checkbox";
-      document.getElementById("monday").appendChild(checkbox);
-      document.getElementById("monday").innerText = input + " " + document.getElementById("monday").innerText;
-      break;
-    case "Tuesday":
-      var checkbox = document.createElement("check");
-      checkbox.type = "checkbox";
-      document.getElementById("tuesday").appendChild(checkbox);
-      document.getElementById("tuesday").innerText = input + " " + document.getElementById("tuesday").innerText;
-      break;
-    case "Wednesday":
-      var checkbox = document.createElement("check");
-      checkbox.type = "checkbox";
-      document.getElementById("wednesday").appendChild(checkbox);
-      document.getElementById("wednesday").innerText = input + " " + document.getElementById("wednesday").innerText;
-      break;
-    case "Thursday":
-      var checkbox = document.createElement("check");
-      checkbox.type = "checkbox";
-      document.getElementById("thursday").appendChild(checkbox);
-      document.getElementById("thursday").innerText = input + " " + document.getElementById("thursday").innerText;
-      break;
-    case "Friday":
-      var checkbox = document.createElement("check");
-      checkbox.type = "checkbox";
-      document.getElementById("friday").appendChild(checkbox);
-      document.getElementById("friday").innerText = input + " " + document.getElementById("friday").innerText;
-      break;
-    case "Saturday":
-      var checkbox = document.createElement("check");
-      checkbox.type = "checkbox";
-      document.getElementById("saturday").appendChild(checkbox);
-      document.getElementById("saturday").innerText = input + "time" + document.getElementById("saturday").innerText;
-      break;
-    case "Sunday":
-      var checkbox = document.createElement("check");
-      checkbox.type = "checkbox";
-      document.getElementById("sunday").appendChild(checkbox);
-      document.getElementById("sunday").innerText = input + " " + document.getElementById("sunday").innerText;
-      break;
+    var input = document.getElementById("input").value;
+    var week = document.getElementById("week").value;
+    var day = document.getElementById(week.toLowerCase());
+    day.innerHTML = day.innerHTML + "<br>" + input;
   }
-  tasks();
-}
-function displayDayOfWeek() {
-  var d = new Date();
-  var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-  var day = days[d.getDay()];
-  document.getElementById("days").innerHTML = "Today is " + day + " these are your tasks:";
-}
-setInterval(displayDayOfWeek, 1000);
-function tasks() {
-  var d = new Date();
-  var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-  var day = days[d.getDay()];
-  switch (day) {
-      case "Monday":
-          document.getElementById("tasks").innerText = document.getElementById("monday").innerText;
-          break;
-      case "Tuesday":
-          document.getElementById("tasks").innerText = document.getElementById("tuesday").innerText;
-          break;
-      case "Wednesday":
-          document.getElementById("tasks").innerText = document.getElementById("wednesday").innerText;
-          break;
-      case "Thursday":
-          document.getElementById("tasks").innerText = document.getElementById("thursday").innerText;
-          break;
-      case "Friday":
-          document.getElementById("tasks").innerText = document.getElementById("friday").innerText;
-          break;
-      case "Saturday":
-          document.getElementById("tasks").innerText = document.getElementById("saturday").innerText;
-          break;
-      case "Sunday":
-          document.getElementById("tasks").innerText = document.getElementById("sunday").innerText;
-          break;
-  }
-}
-
-
-
-
-
+</script>
