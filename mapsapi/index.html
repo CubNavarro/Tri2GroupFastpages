@@ -4,20 +4,20 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Schedule Maker | Procedures</title>
+<title>Near Me Finder | Procedures</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="Schedule Maker" />
+<meta property="og:title" content="Near Me Finder" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
 <meta property="og:description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
-<link rel="canonical" href="https://cubnavarro.github.io/Tri2GroupFastpages/markdown/" />
-<meta property="og:url" content="https://cubnavarro.github.io/Tri2GroupFastpages/markdown/" />
+<link rel="canonical" href="https://cubnavarro.github.io/Tri2GroupFastpages/mapsapi/" />
+<meta property="og:url" content="https://cubnavarro.github.io/Tri2GroupFastpages/mapsapi/" />
 <meta property="og:site_name" content="Procedures" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Schedule Maker" />
+<meta property="twitter:title" content="Near Me Finder" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"An easy to use blogging platform with support for Jupyter Notebooks.","headline":"Schedule Maker","url":"https://cubnavarro.github.io/Tri2GroupFastpages/markdown/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","description":"An easy to use blogging platform with support for Jupyter Notebooks.","headline":"Near Me Finder","url":"https://cubnavarro.github.io/Tri2GroupFastpages/mapsapi/"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/Tri2GroupFastpages/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://cubnavarro.github.io/Tri2GroupFastpages/feed.xml" title="Procedures" /><link rel="shortcut icon" type="image/x-icon" href="/Tri2GroupFastpages/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -69,81 +69,29 @@ window.onload = wrap_img;
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <article class="post">
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Near Me Finder!</h1>
+    
+    <p>
+        <strong>Welcome to San Diego!</strong>
+        <br>Explore the map below to find places you want go
+        <br>You can record your places you want to go --> <a href='https://cubnavarro.github.io/Tri2GroupFastpages/markdown/'><button>HERE!</button></a>
+    </p>    
 
-  <header class="post-header">
-    <h1 class="post-title">Schedule Maker</h1>
-  </header>
-
-  <div class="post-content">
-    <h2 id="schedule-maker">Schedule Maker</h2>
-<ul>
-  <li>Add your activities</li>
-  <li>Organize your activities</li>
-  <li>Schedule times for activities
-<br />
-    <h2 id="create-a-schedule">Create A Schedule!</h2>
-  </li>
-</ul>
-
-<table width="500px">
-  <tr>
-    <th><label for="input">Activities:</label></th>
-    <th><label for="week">Choose a Day:</label></th>
-    <th>Apply</th>
-  </tr>
-  <tr>
-    <td><input id="input" /></td>
-    <td>
-      <select name="week" id="week">
-        <option>Monday</option>
-        <option>Tuesday</option>
-        <option>Wednesday</option>
-        <option>Thursday</option>
-        <option>Friday</option>
-        <option>Saturday</option>
-        <option>Sunday</option>
-      </select>
-    </td>
-    <td><button onclick="Add()">Apply</button></td>
-  </tr>
-</table>
-<p><br /></p>
-
-<table>
-  <tr>
-    <th>Monday</th>
-    <th>Tuesday</th>
-    <th>Wednesday</th>
-    <th>Thursday</th>
-    <th>Friday</th>
-    <th>Saturday</th>
-    <th>Sunday</th>
-  </tr>
-    <tr>
-    <td><div id="monday"></div></td>
-    <td><div id="tuesday"></div></td>
-    <td><div id="wednesday"></div></td>
-    <td><div id="thursday"></div></td>
-    <td><div id="friday"></div></td>
-    <td><div id="saturday"></div></td>
-    <td><div id="sunday"></div></td>
-  </tr>
-</table>
-<p><br />
-<script>
-  function Add(){
-    var input = document.getElementById("input").value;
-    var week = document.getElementById("week").value;
-    var day = document.getElementById(week.toLowerCase());
-    day.innerHTML = day.innerHTML + "<br />" + input;
-  }
-</script></p>
-
-  </div>
-
-</article>
-
+    <p>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d429154.7584863347!2d-117.38916777766448!3d32.82481751415464!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80d9530fad921e4b%3A0xd3a21fdfd15df79!2sSan%20Diego%2C%20CA!5e0!3m2!1sen!2sus!4v1675659935705!5m2!1sen!2sus" width="1000" height="700" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </p>
+    
+</body>
+</html>
       </div>
     </main><footer class="site-footer h-card">
   <data class="u-url" href="/Tri2GroupFastpages/"></data>
