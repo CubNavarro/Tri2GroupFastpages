@@ -72,6 +72,17 @@
 
   
       ,"page1": {
+          "title": "HTML code testing",
+          "content": "&lt;div class =&quot;temp123&quot;&gt; &lt;html&gt; &lt;body&gt; &lt;h1&gt;Review Page&lt;/h1&gt; &lt;form action=&quot;/action_page.php&quot;&gt; &lt;div class=&quot;form-group&quot;&gt; &lt;div class=&quot;col-md-4 inputGroupContainer&quot;&gt; &lt;div class=&quot;input-group&quot;&gt; &lt;span class=&quot;input-group-addon&quot;&gt;&lt;i class=&quot;fa fa-user&quot;&gt;&lt;/i&gt;&lt;/span&gt; &lt;input name=&quot;name&quot; placeholder=&quot;Username&quot; class=&quot;form-control&quot; type=&quot;text&quot;&gt; &lt;div class=&quot;form-group&quot;&gt; &lt;head&gt; &lt;meta charset=&quot;UTF-8&quot;&gt; &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;style.css&quot;&gt; &lt;title&gt;Star rating using pure CSS&lt;/title&gt; &lt;/head&gt; &lt;html&gt; &lt;head&gt; &lt;meta charset=&quot;UTF-8&quot;&gt; &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;style.css&quot;&gt; &lt;title&gt;Star rating using pure CSS&lt;/title&gt; &lt;/head&gt; &lt;body&gt; &lt;div class=&quot;rate&quot;&gt; &lt;input type=&quot;radio&quot; id=&quot;star1&quot; name=&quot;rate&quot; value=&quot;1&quot; /&gt; &lt;label for=&quot;star1&quot; title=&quot;text&quot;&gt;1 star&lt;/label&gt; &lt;input type=&quot;radio&quot; id=&quot;star2&quot; name=&quot;rate&quot; value=&quot;2&quot; /&gt; &lt;label for=&quot;star2&quot; title=&quot;text&quot;&gt;2 stars&lt;/label&gt; &lt;input type=&quot;radio&quot; id=&quot;star3&quot; name=&quot;rate&quot; value=&quot;3&quot; /&gt; &lt;label for=&quot;star3&quot; title=&quot;text&quot;&gt;3 stars&lt;/label&gt; &lt;input type=&quot;radio&quot; id=&quot;star4&quot; name=&quot;rate&quot; value=&quot;4&quot; /&gt; &lt;label for=&quot;star4&quot; title=&quot;text&quot;&gt;4 stars&lt;/label&gt; &lt;input type=&quot;radio&quot; id=&quot;star5&quot; name=&quot;rate&quot; value=&quot;5&quot; /&gt; &lt;label for=&quot;star5&quot; title=&quot;text&quot;&gt;5 stars&lt;/label&gt; &lt;/div&gt; &lt;/body&gt; &lt;/html&gt; &gt;Write your feedback.&lt;/div&gt; &lt;div class=&quot;form-group&quot;&gt; &lt;div class=&quot;col-md-4 inputGroupContainer&quot;&gt; &lt;div class=&quot;input-group&quot;&gt; &lt;span class=&quot;input-group-addon&quot;&gt;&lt;i class=&quot;fa fa-pencil&quot;&gt;&lt;/i&gt;&lt;/span&gt; &lt;textarea class=&quot;form-control&quot; id=&quot;review&quot; rows=&quot;3&quot;&gt;&lt;/textarea&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;button type=&quot;submit&quot; class=&quot;btn btn-primary&quot;&gt;Submit&lt;/button&gt; &lt;/form&gt; &lt;/body&gt; . &lt;/html&gt; .",
+          "url": "https://cubnavarro.github.io/Tri2GroupFastpages/_pages/Review.html",
+          "relUrl": "/_pages/Review.html",
+          "date": ""
+      }
+      
+  
+
+  
+      ,"page2": {
           "title": "About Me",
           "content": "This website is powered by fastpages 1. . a blogging platform that natively supports Jupyter notebooks in addition to other formats. &#8617; . |",
           "url": "https://cubnavarro.github.io/Tri2GroupFastpages/about/",
@@ -82,7 +93,7 @@
   
 
   
-      ,"page2": {
+      ,"page3": {
           "title": "Schedule Maker",
           "content": "Schedule Maker . Add your activities | Organize your activities | Schedule times for activities Create A Schedule! . | . Activities: Choose a Day: Apply . | Monday Tuesday Wednesday Thursday Friday Saturday Sunday | Apply | . . Monday Tuesday Wednesday Thursday Friday Saturday Sunday . | | | | | | | . .",
           "url": "https://cubnavarro.github.io/Tri2GroupFastpages/markdown/",
@@ -119,7 +130,7 @@
   
 
   
-      ,"page13": {
+      ,"page14": {
           "title": "",
           "content": "Sitemap: {{ “sitemap.xml” | absolute_url }} | .",
           "url": "https://cubnavarro.github.io/Tri2GroupFastpages/robots.txt",
