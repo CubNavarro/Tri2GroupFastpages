@@ -34,7 +34,7 @@ search_exclude: true
         var sd = { lat: 33.1005, lng: -116.3013 };
 
         var map = new google.maps.Map(document.getElementById("map"), {
-          zoom: 9,
+          zoom: 9,  
           center: sd,
         });
 
