@@ -10,14 +10,14 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
 <meta property="og:description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
-<link rel="canonical" href="https://cubnavarro.github.io/Tri2GroupFastpages/mapsapi/" />
-<meta property="og:url" content="https://cubnavarro.github.io/Tri2GroupFastpages/mapsapi/" />
+<link rel="canonical" href="https://cubnavarro.github.io/Tri2GroupFastpages/map/" />
+<meta property="og:url" content="https://cubnavarro.github.io/Tri2GroupFastpages/map/" />
 <meta property="og:site_name" content="Procedures" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Near Me Finder" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"An easy to use blogging platform with support for Jupyter Notebooks.","headline":"Near Me Finder","url":"https://cubnavarro.github.io/Tri2GroupFastpages/mapsapi/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","description":"An easy to use blogging platform with support for Jupyter Notebooks.","headline":"Near Me Finder","url":"https://cubnavarro.github.io/Tri2GroupFastpages/map/"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/Tri2GroupFastpages/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://cubnavarro.github.io/Tri2GroupFastpages/feed.xml" title="Procedures" /><link rel="shortcut icon" type="image/x-icon" href="/Tri2GroupFastpages/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -64,34 +64,113 @@ window.onload = wrap_img;
           </span>
         </label>
 
-        <div class="trigger"><a class="page-link" href="/Tri2GroupFastpages/_pages/Review.html">Reviews Page</a><a class="page-link" href="/Tri2GroupFastpages/about/">About Me</a><a class="page-link" href="/Tri2GroupFastpages/markdown/">Schedule Maker</a><a class="page-link" href="/Tri2GroupFastpages/mapsapi/">Near Me Finder</a><a class="page-link" href="/Tri2GroupFastpages/forma/">Pick Your House!</a><a class="page-link" href="/Tri2GroupFastpages/search/">Search</a><a class="page-link" href="/Tri2GroupFastpages/signup/">Sign Up</a><a class="page-link" href="/Tri2GroupFastpages/categories/">Tags</a></div>
+        <div class="trigger"><a class="page-link" href="/Tri2GroupFastpages/_pages/Review.html">Reviews Page</a><a class="page-link" href="/Tri2GroupFastpages/about/">About Me</a><a class="page-link" href="/Tri2GroupFastpages/markdown/">Schedule Maker</a><a class="page-link" href="/Tri2GroupFastpages/map/">Near Me Finder</a><a class="page-link" href="/Tri2GroupFastpages/forma/">Pick Your House!</a><a class="page-link" href="/Tri2GroupFastpages/search/">Search</a><a class="page-link" href="/Tri2GroupFastpages/signup/">Sign Up</a><a class="page-link" href="/Tri2GroupFastpages/categories/">Tags</a></div>
       </nav></div>
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Near Me Finder!</h1>
-    
-    <p>
-        <strong>Welcome to San Diego!</strong>
-        <br>Explore the map below to find places you want go
-        <br>You can record your places you want to go --> <a href='https://cubnavarro.github.io/Tri2GroupFastpages/markdown/'><button>HERE!</button></a>
-    </p>    
+        <div class="home">
 
-    <p>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d429154.7584863347!2d-117.38916777766448!3d32.82481751415464!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80d9530fad921e4b%3A0xd3a21fdfd15df79!2sSan%20Diego%2C%20CA!5e0!3m2!1sen!2sus!4v1675659935705!5m2!1sen!2sus" width="1000" height="700" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </p>
-    
-</body>
-</html>
+<!--- CSS Styling Sheet-->
+<style>
+
+.row {
+  align-items: center;
+  display: flex;
+}
+#map {
+      height: 700px; /* The height is 400 pixels */
+      width: 150%; /* The width is the width of the web page */
+}
+
+.column {
+  flex: 33.33%;
+  padding: 5px;
+}
+</style>
+
+<h2 id="near-me-finder">Near Me Finder</h2>
+<div id="map"></div>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD0erTF9F5UoSk6YZ4wIWNg0j7vbkSXGcw&amp;callback=initMap&amp;v=weekly" defer=""></script>
+
+<script>                              
+      // Initialize and add the map
+      function initMap() {
+        // The location of Borrego Springs
+        var sd = { lat: 33.1005, lng: -116.3013 };
+
+        var map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 9,
+          center: sd,
+        });
+
+        var markers = [
+          {
+          coords : {lat: 32.832809, lng: -117.271271}, 
+          content: '<p style="color:blue;">House 1-La Jolla</p>' 
+          },
+          {
+          coords : {lat: 32.999780, lng: -117.257200}, 
+          content: '<p style="color:blue;">House 2-North Pacific Beach</p>'  
+          }, 
+          {
+          coords : {lat: 32.713631, lng: -117.155602}, 
+          content: '<p style="color:blue;">House 3-Downtown San Diego</p> '  
+          }, 
+          {  
+          coords : {lat: 33.158350, lng: -117.032630}, 
+          content: '<p style="color:blue;"> Daves Hot Chicken (Food)</p>'  
+          }, 
+          {
+          coords : {lat: 32.912239, lng: -117.147217}, 
+          content: '<p style="color:blue;">Raising Canes (Food)</p>'  
+          },
+          {
+          coords : {lat: 32.769939, lng: -117.251091}, 
+          content: '<p style="color:blue;">Belmont Park (Activity)</p>'  
+          },
+          {
+          coords : {lat: 33.010290, lng: -116.947480}, 
+          content: '<p style="color:blue;">Potato Chip Rock (Activity)</p>'  
+          },
+	
+        ];
+      
+        // Loop through markers 
+        for(var i = 0; i < markers.length; i++) { 
+          addMarker(markers[i]); 
+        }
+                                          
+        // Add Marker 
+        function addMarker(props){ 
+          var marker =  new google.maps.Marker({ 
+            position:props.coords, 
+            map:map, 
+          });
+
+          if(props.content) { 
+               var infoWindow = new google.maps.InfoWindow({ 
+              content:props.content 
+               });
+            infoWindow.open(map, marker);
+            marker.addListener( 'click', function(){ 
+              infoWindow.open(map, marker); 
+            });
+          }
+        }                                          
+      }
+
+      window.initMap = initMap;
+</script>
+
+<p><br />
+<br />
+<br /></p>
+<div id="map1"></div>
+
+
+</div>
       </div>
     </main><footer class="site-footer h-card">
   <data class="u-url" href="/Tri2GroupFastpages/"></data>
