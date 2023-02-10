@@ -64,7 +64,7 @@ window.onload = wrap_img;
           </span>
         </label>
 
-        <div class="trigger"><a class="page-link" href="/Tri2GroupFastpages/_pages/Review.html">Reviews Page</a><a class="page-link" href="/Tri2GroupFastpages/about/">About Me</a><a class="page-link" href="/Tri2GroupFastpages/markdown/">Schedule Maker</a><a class="page-link" href="/Tri2GroupFastpages/map/">Near Me Finder</a><a class="page-link" href="/Tri2GroupFastpages/forma/">Pick Your House!</a><a class="page-link" href="/Tri2GroupFastpages/search/">Search</a><a class="page-link" href="/Tri2GroupFastpages/signup/">Sign Up</a><a class="page-link" href="/Tri2GroupFastpages/categories/">Tags</a></div>
+        <div class="trigger"><a class="page-link" href="/Tri2GroupFastpages/_pages/Review.html">Reviews Page</a><a class="page-link" href="/Tri2GroupFastpages/markdown/">Schedule Maker</a><a class="page-link" href="/Tri2GroupFastpages/about/">About Me</a><a class="page-link" href="/Tri2GroupFastpages/map/">Near Me Finder</a><a class="page-link" href="/Tri2GroupFastpages/forma/">Pick Your House!</a><a class="page-link" href="/Tri2GroupFastpages/search/">Search</a><a class="page-link" href="/Tri2GroupFastpages/signup/">Sign Up</a><a class="page-link" href="/Tri2GroupFastpages/categories/">Tags</a></div>
       </nav></div>
 </header>
 <main class="page-content" aria-label="Content">
@@ -90,6 +90,7 @@ window.onload = wrap_img;
   <tr>
     <th><label for="input">Activities:</label></th>
     <th><label for="week">Choose a Day:</label></th>
+    <button onclick="Reset()">Reset</button>
     <th>Apply</th>
   </tr>
   <tr>
@@ -130,15 +131,34 @@ window.onload = wrap_img;
     <td><div id="sunday"></div></td>
   </tr>
 </table>
-<p><br />
+<p><br /></p>
+
 <script>
   function Add(){
     var input = document.getElementById("input").value;
     var week = document.getElementById("week").value;
     var day = document.getElementById(week.toLowerCase());
-    day.innerHTML = day.innerHTML + "<br />" + input;
+    day.innerHTML = day.innerHTML + "<br>" + input;
+    
+    // Save the data to local storage
+    localStorage.setItem(week, day.innerHTML);
   }
-</script></p>
+  
+  // Load data from local storage on page load
+  window.onload = function() {
+    document.getElementById("monday").innerHTML = localStorage.getItem("Monday") || "";
+    document.getElementById("tuesday").innerHTML = localStorage.getItem("Tuesday") || "";
+    document.getElementById("wednesday").innerHTML = localStorage.getItem("Wednesday") || "";
+    document.getElementById("thursday").innerHTML = localStorage.getItem("Thursday") || "";
+    document.getElementById("friday").innerHTML = localStorage.getItem("Friday") || "";
+    document.getElementById("saturday").innerHTML = localStorage.getItem("Saturday") || "";
+    document.getElementById("sunday").innerHTML = localStorage.getItem("Sunday") || "";
+
+}
+
+
+</script>
+
 
   </div>
 

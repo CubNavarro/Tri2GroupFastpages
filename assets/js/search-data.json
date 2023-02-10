@@ -83,10 +83,10 @@
 
   
       ,"page2": {
-          "title": "About Me",
-          "content": "This website is powered by fastpages 1. . a blogging platform that natively supports Jupyter notebooks in addition to other formats. &#8617; . |",
-          "url": "https://cubnavarro.github.io/Tri2GroupFastpages/about/",
-          "relUrl": "/about/",
+          "title": "Schedule Maker",
+          "content": "Schedule Maker . Add your activities | Organize your activities | Schedule times for activities Create A Schedule! . | . Activities: Choose a Day: Reset Apply . | Monday Tuesday Wednesday Thursday Friday Saturday Sunday | Apply | . . Monday Tuesday Wednesday Thursday Friday Saturday Sunday . | | | | | | | . .",
+          "url": "https://cubnavarro.github.io/Tri2GroupFastpages/markdown/",
+          "relUrl": "/markdown/",
           "date": ""
       }
       
@@ -94,10 +94,10 @@
 
   
       ,"page3": {
-          "title": "Schedule Maker",
-          "content": "Schedule Maker . Add your activities | Organize your activities | Schedule times for activities Create A Schedule! . | . Activities: Choose a Day: Apply . | Monday Tuesday Wednesday Thursday Friday Saturday Sunday | Apply | . . Monday Tuesday Wednesday Thursday Friday Saturday Sunday . | | | | | | | . .",
-          "url": "https://cubnavarro.github.io/Tri2GroupFastpages/markdown/",
-          "relUrl": "/markdown/",
+          "title": "About Me",
+          "content": "This website is powered by fastpages 1. . a blogging platform that natively supports Jupyter notebooks in addition to other formats. &#8617; . |",
+          "url": "https://cubnavarro.github.io/Tri2GroupFastpages/about/",
+          "relUrl": "/about/",
           "date": ""
       }
       
