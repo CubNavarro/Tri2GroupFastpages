@@ -15,6 +15,7 @@ permalink: /markdown/
   <tr>
     <th><label for="input">Activities:</label></th>
     <th><label for="week">Choose a Day:</label></th>
+    <button onclick="Reset()">Reset</button>
     <th>Apply</th>
   </tr>
   <tr>
@@ -56,11 +57,30 @@ permalink: /markdown/
   </tr>
 </table>
 <br>
+
 <script>
   function Add(){
     var input = document.getElementById("input").value;
     var week = document.getElementById("week").value;
     var day = document.getElementById(week.toLowerCase());
     day.innerHTML = day.innerHTML + "<br>" + input;
+    
+    // Save the data to local storage
+    localStorage.setItem(week, day.innerHTML);
   }
+  
+  // Load data from local storage on page load
+  window.onload = function() {
+    document.getElementById("monday").innerHTML = localStorage.getItem("Monday") || "";
+    document.getElementById("tuesday").innerHTML = localStorage.getItem("Tuesday") || "";
+    document.getElementById("wednesday").innerHTML = localStorage.getItem("Wednesday") || "";
+    document.getElementById("thursday").innerHTML = localStorage.getItem("Thursday") || "";
+    document.getElementById("friday").innerHTML = localStorage.getItem("Friday") || "";
+    document.getElementById("saturday").innerHTML = localStorage.getItem("Saturday") || "";
+    document.getElementById("sunday").innerHTML = localStorage.getItem("Sunday") || "";
+
+}
+
+
 </script>
+
