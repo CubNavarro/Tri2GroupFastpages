@@ -23,7 +23,7 @@ search_exclude: true
 </style>
 
 ## Near Me Finder
-#### Use the map below to find locations that are in your area. You can use <a href='https://cubnavarro.github.io/Tri2GroupFastpages/markdown/'><THIS>Link To freeCodeCamp</button></a> to plan your activities!
+#### Use the map below to find important locations in your area. You can use <a href='https://cubnavarro.github.io/Tri2GroupFastpages/markdown/'><button>THIS</button></a> to plan your activities!
 <div id="map"></div>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD0erTF9F5UoSk6YZ4wIWNg0j7vbkSXGcw&callback=initMap&v=weekly" defer></script>
