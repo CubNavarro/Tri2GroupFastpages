@@ -13,7 +13,7 @@ search_exclude: true
 }
 #map {
       height: 700px; /* The height is 400 pixels */
-      width: 150%; /* The width is the width of the web page */
+      width: 100%; /* The width is the width of the web page */
 }
 
 .column {
