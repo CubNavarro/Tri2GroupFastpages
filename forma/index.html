@@ -124,8 +124,23 @@ window.onload = wrap_img;
 </th>
        </select>
 <th><input type = "submit" value ="Submit"></th>
+<th><div class = random></div><input type = "randomize" value = Randomize></th>
 </tr>   
 </table>
+<script>
+  var raw = "";
+
+var requestOptions = {
+  method: 'GET',
+  body: raw,
+  redirect: 'follow'
+};
+
+fetch("http://127.0.0.1:8086/api/users", requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
+</script>
 
 <style> 
 .row { float: left; width: 33.33%; padding: 5px;}
