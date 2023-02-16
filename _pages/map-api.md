@@ -9,7 +9,7 @@ search_exclude: true
   var raw = "";
 
 var requestOptions = {
-  method: 'POST',
+  method: 'GET',
   body: raw,
   redirect: 'follow'
 };
