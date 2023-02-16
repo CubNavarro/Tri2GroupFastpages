@@ -124,10 +124,11 @@ window.onload = wrap_img;
 </th>
        </select>
 <th><input type = "submit" value ="Submit"></th>
-<th><div class = random></div><input type = "button" value = Randomize></th>
+<th><div class = random></div><input onclick="myFunction()" type = "button" value = Randomize></th>
 </tr>   
 </table>
 <script>
+  myFunction();{
  var raw = "";
 
 var requestOptions = {
@@ -139,7 +140,8 @@ var requestOptions = {
 fetch("http://127.0.0.1:8086/api/users/create", requestOptions)
   .then(response => response.text())
   .then(result => console.log(result))
-  .catch(error => console.log('error', error));
+  .catch(error => console.log('error', error)); 
+}
 </script>
 
 <style> 
