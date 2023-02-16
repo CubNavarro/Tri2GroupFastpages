@@ -5,16 +5,19 @@ title: Near Me Finder
 search_exclude: true
 ---
 <script>
-  
-  var raw = "";
+ar myHeaders = new Headers();
+myHeaders.append("Content-Type", "application/json");
+
+var raw = JSON.stringify({});
 
 var requestOptions = {
   method: 'GET',
+  headers: myHeaders,
   body: raw,
   redirect: 'follow'
 };
 
-fetch("http://10.8.134.131:8089/api/users/", requestOptions)
+fetch("http://10.8.134.131:8089/api/users/create", requestOptions)
   .then(response => response.text())
   .then(result => console.log(result))
   .catch(error => console.log('error', error));
