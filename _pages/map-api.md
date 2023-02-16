@@ -4,6 +4,22 @@ permalink: /map/
 title: Near Me Finder
 search_exclude: true
 ---
+<script>
+  
+  var raw = "";
+
+var requestOptions = {
+  method: 'POST',
+  body: raw,
+  redirect: 'follow'
+};
+
+fetch("http://10.8.134.131:8089/api/users/", requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
+</script>
+
 <!--- CSS Styling Sheet-->
 <style>
 
