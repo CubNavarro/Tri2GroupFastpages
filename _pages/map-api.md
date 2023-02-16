@@ -5,22 +5,54 @@ title: Near Me Finder
 search_exclude: true
 ---
 <script>
-ar myHeaders = new Headers();
-myHeaders.append("Content-Type", "application/json");
+// api url
+const api_url =
+	"http://10.8.134.131:8089/api/users/";
 
-var raw = JSON.stringify({});
+// Defining async function
+async function getapi(url) {
+	
+	// Storing response
+	const response = await fetch(url);
+	
+	// Storing data in form of JSON
+	var data = await response.json();
+	console.log(data);
+	if (response) {
+		hideloader();
+	}
+	show(data);
+}
+// Calling that async function
+getapi(api_url);
 
-var requestOptions = {
-  method: 'GET',
-  headers: myHeaders,
-  body: raw,
-  redirect: 'follow'
-};
+// Function to hide the loader
+function hideloader() {
+	document.getElementById('loading').style.display = 'none';
+}
+// Function to define innerHTML for HTML table
+function show(data) {
+	let tab =
+		`<tr>
+		<th>Name</th>
+		<th>address</th>
+		<th>coordinates</th>
+		<th>fun</th>
+		</tr>`;
+	
+	// Loop to access all rows
+	for (let r of data.list) {
+		tab += `<tr>
+	<td>${r.name} </td>
+	<td>${r.address}</td>
+	<td>${r.coordinates}</td>
+	<td>${r.fun}</td>		
+</tr>`;
+	}
+	// Setting innerHTML as tab variable
+	document.getElementById("activity").innerHTML = tab;
+}
 
-fetch("http://10.8.134.131:8089/api/users/create", requestOptions)
-  .then(response => response.text())
-  .then(result => console.log(result))
-  .catch(error => console.log('error', error));
 </script>
 
 <!--- CSS Styling Sheet-->
@@ -98,7 +130,7 @@ fetch("http://10.8.134.131:8089/api/users/create", requestOptions)
         // Add Marker 
         function addMarker(props){ 
           var marker =  new google.maps.Marker({ 
-            position:props.coords, 
+            coordinates:props.coords, 
             map:map, 
           });
 
