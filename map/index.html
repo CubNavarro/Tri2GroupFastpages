@@ -73,6 +73,7 @@ window.onload = wrap_img;
 
 <!--- CSS Styling Sheet-->
 <style>
+
 .row {
   align-items: center;
   display: flex;
@@ -81,6 +82,7 @@ window.onload = wrap_img;
       height: 700px; /* The height is 400 pixels */
       width: 100%; /* The width is the width of the web page */
 }
+
 .column {
   flex: 33.33%;
   padding: 5px;
@@ -88,7 +90,6 @@ window.onload = wrap_img;
 </style>
 
 <h2 id="near-me-finder">Near Me Finder</h2>
-<h4 id="use-the-map-below-to-find-important-locations-in-your-area-if-you-look-in-the-bottom-right-of-the-map-there-is-a-person-you-can-drag-and-place-any-where-on-the-map-and-you-can-get-a-360-view-of-your-selected-location-it-also-tells-you-the-name-of-the-selected-location-in-the-top-left-you-can-use-this-to-plan-your-activities">Use the map below to find important locations in your area. If you look in the bottom right of the map there is a person you can drag and place any where on the map and you can get a 360 view of your selected location (it also tells you the name of the selected location in the top left.) You can use <a href="https://cubnavarro.github.io/Tri2GroupFastpages/markdown/"><button>THIS</button></a> to plan your activities!</h4>
 <div id="map"></div>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD0erTF9F5UoSk6YZ4wIWNg0j7vbkSXGcw&amp;callback=initMap&amp;v=weekly" defer=""></script>
@@ -97,10 +98,10 @@ window.onload = wrap_img;
       // Initialize and add the map
       function initMap() {
         // The location of Borrego Springs
-        var sd = { lat: 32.986370, lng: -117.023491 };
+        var sd = { lat: 33.1005, lng: -116.3013 };
 
         var map = new google.maps.Map(document.getElementById("map"), {
-          zoom: 9,  
+          zoom: 9,
           center: sd,
         });
 
@@ -144,7 +145,7 @@ window.onload = wrap_img;
         // Add Marker 
         function addMarker(props){ 
           var marker =  new google.maps.Marker({ 
-            coordinates:props.coords, 
+            position:props.coords, 
             map:map, 
           });
 
