@@ -52,6 +52,7 @@ search_exclude: true
        <option value = "5+ baths ">5+ baths</option>
 </th>
        </select>
+<th><button type="button" onclick="myfetch()">Fetch Data</button></th>
 <th><div class = random></div><input onclick="myFunction()" type = "button" value = Randomize></th>
 </tr>   
 </table>
@@ -84,6 +85,7 @@ search_exclude: true
     <img src="/Tri2GroupFastpages/images/Design 3 .png" alt="house3" style="width:100%">
   </div>
   <script>
+    myfetch();{
     fetch('http://127.0.0.1:8086/api/users/', {
         method: 'GET',
         headers: {
@@ -97,7 +99,7 @@ search_exclude: true
     })
     .then(data => console.log(data))
     .catch(error => consol.log('Error'))
- 
+}
    
   </script>
 
