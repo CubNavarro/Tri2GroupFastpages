@@ -123,13 +123,11 @@ window.onload = wrap_img;
        <option value = "5+ baths ">5+ baths</option>
 </th>
        </select>
-<th><input type = "submit" value ="Submit"></th>
 <th><div class = random></div><input onclick="myFunction()" type = "button" value = Randomize></th>
 </tr>   
 </table>
 <h1> Hello, Please provide the name of the house you would like to stay in?</h1>
     <input id="userInput"> 
-    <button onclick="myFunction1()"> Submit </button>
     <h1 id="message"></h1>
     <style>
         body {background-color:aliceblue; text-align: center; font-size: medium; font-family: 'Times New Roman', Times, serif ;}
@@ -141,27 +139,6 @@ window.onload = wrap_img;
             message.innerHTML = "Okay Great Choice You Will Be Staying At house 1 ";  
         }
     </script>
-<script>
-  myFunction1();{
- var raw = "";
-
-var requestOptions = {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json'
-  },
-  body: JSON.stringify({
-    name: 'House 1'
-  }),
-  redirect: 'follow'
-};
-
-fetch("http://127.0.0.1:8086/api/users/", requestOptions)
-  .then(response => response.text())
-  .then(result => console.log(result))
-  .catch(error => console.log('error', error)); 
-}
-</script>
 
 <style> 
 .row { float: left; width: 33.33%; padding: 5px;}
@@ -177,6 +154,24 @@ fetch("http://127.0.0.1:8086/api/users/", requestOptions)
    <div class="column"> House 3
     <img src="/Tri2GroupFastpages/images/Design 3 .png" alt="house3" style="width:100%">
   </div>
+  <script>
+    fetch('http://127.0.0.1:8086/api/users/', {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body:JSON.stringify({
+            name: 'House 1'
+        })
+    }).then(res => {
+    return res.json()
+    })
+    .then(data => console.log(data))
+    .catch(error => consol.log('Error'))
+ 
+   
+  </script>
+
 
 
 
