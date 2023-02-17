@@ -5,6 +5,18 @@ title: Near Me Finder
 search_exclude: true
 ---
 <!--- CSS Styling Sheet-->
+<script>
+  var requestOptions = {
+  method: 'GET',
+  redirect: 'follow'
+};
+
+fetch("http://10.8.134.131:8089/api/users/", requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
+</script>
+
 <style>
 
 .row {
