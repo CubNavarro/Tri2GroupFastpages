@@ -4,10 +4,46 @@ permalink: /map/
 title: Near Me Finder
 search_exclude: true
 ---
-
+       </select>
+<th><input type = "submit" value ="Submit"></th>
+<th><div class = random></div><input onclick="myFunction()" type = "button" value = Randomize></th>
+</tr>   
+</table>
+<h1> Hello, Please provide the name of the activity you want to do.</h1>
+    <input id="userInput"> 
+    <button onclick="myFunction1()"> Submit </button>
+    <h1 id="message"></h1>
+    <style>
+        body {background-color:aliceblue; text-align: center; font-size: medium; font-family: 'Times New Roman', Times, serif ;}
+    </style>
+    <script>
+        function myFunction() {
+            let userInput = document.querySelector("#userInput");
+            let message = document.querySelector("#message");
+            message.innerHTML = "Okay Great Choice You Will Be Staying Going to Raising Canes ";  
+        }
+    </script>
+<script>
+  myFunction1();{
+ var raw = "";
+var requestOptions = {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+    name: 'House 1'
+  }),
+  redirect: 'follow'
+};
+fetch("http://10.8.134.131:8089/api/users/", requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error)); 
+}
+</script>
 <!--- CSS Styling Sheet-->
 <style>
-
 .row {
   align-items: center;
   display: flex;
@@ -16,7 +52,6 @@ search_exclude: true
       height: 700px; /* The height is 400 pixels */
       width: 100%; /* The width is the width of the web page */
 }
-
 .column {
   flex: 33.33%;
   padding: 5px;
