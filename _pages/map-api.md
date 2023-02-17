@@ -4,7 +4,7 @@ permalink: /map/
 title: Near Me Finder
 search_exclude: true
 ---
-       </select>
+  </select>
 <th><input type = "submit" value ="Submit"></th>
 <th><div class = random></div><input onclick="myFunction()" type = "button" value = Randomize></th>
 </tr>   
