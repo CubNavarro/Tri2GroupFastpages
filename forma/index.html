@@ -129,7 +129,7 @@ window.onload = wrap_img;
 </table>
 <h1> Hello, Please provide the name of the house you would like to stay in?</h1>
     <input id="userInput"> 
-    <button onclick="myFunction()"> Submit </button>
+    <button onclick="myFunction1()"> Submit </button>
     <h1 id="message"></h1>
     <style>
         body {background-color:aliceblue; text-align: center; font-size: medium; font-family: 'Times New Roman', Times, serif ;}
@@ -142,12 +142,17 @@ window.onload = wrap_img;
         }
     </script>
 <script>
-  myFunction();{
+  myFunction1();{
  var raw = "";
 
 var requestOptions = {
   method: 'POST',
-  body: raw,
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+    name: 'House 1'
+  }),
   redirect: 'follow'
 };
 
@@ -172,7 +177,7 @@ fetch("http://127.0.0.1:8086/api/users/", requestOptions)
    <div class="column"> House 3
     <img src="/Tri2GroupFastpages/images/Design 3 .png" alt="house3" style="width:100%">
   </div>
-</div>
+
 
 
 
