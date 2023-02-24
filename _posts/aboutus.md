@@ -1,6 +1,6 @@
 ---
 toc: true
-layout: post
+layout: base
 description: Who we are and what were about
 categories: [markdown]
 title: About Us
