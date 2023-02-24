@@ -1,20 +1,22 @@
 ---
 layout: base
-permalink: /signup/
-title: Sign Up
+permalink: /houserito/
+title: Add a house
 search_exclude: true
 ---
 
-<p>Database API</p>
+<title>Find Your House</title>
+
+
 
 <table>
   <thead>
   <tr>
-    <th>User ID</th>
+    <th>House ID</th>
     <th>Name</th>
-    <th>Posts</th>
-    <th>DOB</th>
-    <th>Age</th>
+    <th>Price</th>
+    <th>Beds</th>
+    <th>Baths</th>
   </tr>
   </thead>
   <tbody id="result">
@@ -26,25 +28,23 @@ search_exclude: true
 
 <form action="javascript:create_user()">
     <p><label>
-        User ID:
+        House ID:
         <input type="text" name="uid" id="uid" required>
     </label></p>
     <p><label>
-        Name:
+        Price:
         <input type="text" name="name" id="name" required>
     </label></p>
     <p><label>
-        Password:
-        <input type="password" name="password" id="password" required>
-        Verify Password:
-        <input type="password" name="passwordV" id="passwordV" required>
+        Beds:
+        <input type="beds" name="beds" id="beds" required>
     </label></p>
     <p><label>
-        Birthday:
-        <input type="date" name="dob" id="dob">
+        Baths:
+        <input type="baths" name="baths" id="baths">
     </label></p>
     <p>
-        <button>Create Your Account</button>
+        <button>Add Your House</button>
     </p>
 </form>
 
@@ -53,16 +53,16 @@ search_exclude: true
   const resultContainer = document.getElementById("result");
   // prepare URL's to allow easy switch from deployment and localhost
   //const url = "http://localhost:8086/api/users"
-  const url = "https://flask.nighthawkcodingsociety.com/api/users"
+  const url = "https://finalcptperiod4.duckdns.org/api/houses/"
   const create_fetch = url + '/create';
   const read_fetch = url + '/';
 
   // Load users on page entry
-  read_users();
+  read_houses();
 
 
   // Display User Table, data is fetched from Backend Database
-  function read_users() {
+  function read_houses() {
     // prepare fetch options
     const read_options = {
       method: 'GET', // *GET, POST, PUT, DELETE, etc.
@@ -109,14 +109,15 @@ search_exclude: true
     });
   }
 
-  function create_user(){
+  function create_houses(){
     //Validate Password (must be 6-20 characters in len)
     //verifyPassword("click");
     const body = {
         uid: document.getElementById("uid").value,
         name: document.getElementById("name").value,
-        password: document.getElementById("password").value,
-        dob: document.getElementById("dob").value
+        price: document.getElementById("price").value,
+        beds: document.getElementById("beds").value,
+        baths: document.getElementById("beds").value
     };
     const requestOptions = {
         method: 'POST',
@@ -145,7 +146,7 @@ search_exclude: true
         // response contains valid result
         response.json().then(data => {
             console.log(data);
-            //add a table row for the new/created userid
+            //add a table row for the new/created 
             add_row(data);
         })
     })
@@ -155,24 +156,24 @@ search_exclude: true
     const tr = document.createElement("tr");
     const uid = document.createElement("td");
     const name = document.createElement("td");
-    const posts = document.createElement("td")
-    const dob = document.createElement("td");
-    const age = document.createElement("td");
+    const price = document.createElement("td")
+    const beds = document.createElement("td");
+    const baths = document.createElement("td");
   
 
     // obtain data that is specific to the API
     uid.innerHTML = data.uid; 
     name.innerHTML = data.name; 
-    posts.innerHTML = data.posts.length;
-    dob.innerHTML = data.dob; 
-    age.innerHTML = data.age; 
+    price.innerHTML = data.price.length;
+    beds.innerHTML = data.beds; 
+    baths.innerHTML = data.baths; 
 
     // add HTML to container
     tr.appendChild(uid);
     tr.appendChild(name);
-    tr.appendChild(posts);
-    tr.appendChild(dob);
-    tr.appendChild(age);
+    tr.appendChild(price);
+    tr.appendChild(beds);
+    tr.appendChild(baths);
 
     resultContainer.appendChild(tr);
   }
