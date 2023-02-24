@@ -124,7 +124,7 @@ window.onload = wrap_img;
 </th>
        </select>
 <th><button type="button" onclick="myfetch()">Fetch Data</button></th>
-<th><div class = random></div><input onclick="myFunction()" type = "button" value = Randomize></th>
+<th><div class = random></div><input onclick="myFunction()" type = "button" value = Submit></th>
 </tr>   
 </table>
 <h1> Hello, Please provide the name of the house you would like to stay in?</h1>
@@ -157,13 +157,13 @@ window.onload = wrap_img;
   </div>
   <script>
     myfetch();{
-    fetch('http://127.0.0.1:8086/api/users/', {
+    fetch('https://finalcptperiod4.duckdns.org/api/houses/', {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'
         },
         body:JSON.stringify({
-            name: 'House 1'
+            
         })
     }).then(res => {
     return res.json()
