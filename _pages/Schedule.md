@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: base
 title: Schedule Maker
 permalink: /markdown/
 ---

@@ -1,10 +1,22 @@
 ---
-layout: categories
+layout: base
 permalink: /map/
 title: Near Me Finder
 search_exclude: true
 ---
 <!--- CSS Styling Sheet-->
+<script>
+  var requestOptions = {
+  method: 'GET',
+  redirect: 'follow'
+};
+
+fetch("http://10.8.134.131:8089/api/users/", requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
+</script>
+
 <style>
 
 .row {
@@ -23,6 +35,8 @@ search_exclude: true
 </style>
 
 ## Near Me Finder
+
+#### Use the map below to find important locations in your area. If you look in the bottom right of the map there is a person you can drag and place anywhere on the map and you can get a 360 view of your selected location (it also tells you the name of the selected location in the top left.) You can use <a href='https://cubnavarro.github.io/Tri2GroupFastpages/markdown/'><button>THIS</button></a> to plan your activities!
 <div id="map"></div>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD0erTF9F5UoSk6YZ4wIWNg0j7vbkSXGcw&callback=initMap&v=weekly" defer></script>
