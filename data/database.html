@@ -4,20 +4,20 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Add A House | Rental Retreats</title>
+<title>Add/Explore Houses | Rental Retreats</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="Add A House" />
+<meta property="og:title" content="Add/Explore Houses" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
 <meta property="og:description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
-<link rel="canonical" href="https://cubnavarro.github.io/Tri2GroupFastpages/formal/" />
-<meta property="og:url" content="https://cubnavarro.github.io/Tri2GroupFastpages/formal/" />
+<link rel="canonical" href="https://cubnavarro.github.io/Tri2GroupFastpages/data/database" />
+<meta property="og:url" content="https://cubnavarro.github.io/Tri2GroupFastpages/data/database" />
 <meta property="og:site_name" content="Rental Retreats" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Add A House" />
+<meta property="twitter:title" content="Add/Explore Houses" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"An easy to use blogging platform with support for Jupyter Notebooks.","headline":"Add A House","url":"https://cubnavarro.github.io/Tri2GroupFastpages/formal/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","description":"An easy to use blogging platform with support for Jupyter Notebooks.","headline":"Add/Explore Houses","url":"https://cubnavarro.github.io/Tri2GroupFastpages/data/database"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/Tri2GroupFastpages/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://cubnavarro.github.io/Tri2GroupFastpages/feed.xml" title="Rental Retreats" /><link rel="shortcut icon" type="image/x-icon" href="/Tri2GroupFastpages/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -64,22 +64,25 @@ window.onload = wrap_img;
           </span>
         </label>
 
-        <div class="trigger"><a class="page-link" href="/Tri2GroupFastpages/_pages/Review.html">Reviews Page</a><a class="page-link" href="/Tri2GroupFastpages/markdown/">Schedule Maker</a><a class="page-link" href="/Tri2GroupFastpages/map/">Near Me Finder</a><a class="page-link" href="/Tri2GroupFastpages/formal/">Add A House</a><a class="page-link" href="/Tri2GroupFastpages/forma/">Pick Your House!</a><a class="page-link" href="/Tri2GroupFastpages/categories/">Tags</a></div>
+        <div class="trigger"><a class="page-link" href="/Tri2GroupFastpages/_pages/Review.html">Reviews Page</a><a class="page-link" href="/Tri2GroupFastpages/markdown/">Schedule Maker</a><a class="page-link" href="/Tri2GroupFastpages/map/">Near Me Finder</a><a class="page-link" href="/Tri2GroupFastpages/data/database">Add/Explore Houses</a><a class="page-link" href="/Tri2GroupFastpages/forma/">Pick Your House!</a><a class="page-link" href="/Tri2GroupFastpages/categories/">Tags</a></div>
       </nav></div>
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <h1>Add a House</h1>
-<br/>
+        <p>Add Your House/Find A House
+  1. Browse Available Houses 
+  2. Contact Us To Book In the review tabs
+  3. Add a house for rental with the form
 
-<table  style="width:100%" id = "table">
+</p>
+
+<table>
   <thead>
   <tr>
     <th>Price</th>
     <th>Beds</th>
     <th>Baths</th>
     <th>Name</th>
-   
   </tr>
   </thead>
   <tbody id="result">
@@ -87,54 +90,48 @@ window.onload = wrap_img;
   </tbody>
 </table>
 
-<script>
+<p>Create API</p>
 
-var requestOptions = {
-  method: 'GET',
-  redirect: 'follow'
-};
+<form action="javascript:create_user()">
+    <p><label>
+        Name:
+        <input type="text" name="name" id="name" required>
+    </label></p>
+    <p><label>
+        Price:
+        <input type="text" name="[rice" id="price" required>
+    </label></p>
+    <p><label>
+        Beds:
+        <input type="text" name="beds" id="beds" required>
+    </label></p>
+    <p><label>
+        Baths:
+        <input type="text" name="baths" id="baths" required>
+    </label></p>
 
-
-fetch("https://finalcptperiod4.duckdns.org/api/houses/", requestOptions)
-  .then(response => response.json())
-  .then(r => {
-    r.forEach(ev => {
-      const row = document.createElement("tr")
-      const priceData = document.createElement("td")
-      priceData.innerHTML = `${ev.price}`
-      row.appendChild(priceData)
-
-      const bedsData = document.createElement("td")
-      bedsData.innerHTML = `${ev.beds}`
-      row.appendChild(bedsData)
-
-      const bathsData = document.createElement("td")
-      bathsData.innerHTML = `${ev.baths}`
-      row.appendChild(bathsData)
-
-      const titleData = document.createElement("td")
-      titleData.innerHTML = `<a href=${ev.link}> ${ev.name} </a>`
-      row.appendChild(titleData)
-
-      document.getElementById("table").appendChild(row)
-    })
-  })
-  .catch(error => console.log('error', error))
-
-function reset() {
-  window.location.reload();
-}
-</script>
+    <p>
+        <button> Add House</button>
+    </p>
+</form>
 
 <script>
-const resultContainer = document.getElementById("result");
+  // prepare HTML result container for new output
+  const resultContainer = document.getElementById("result");
   // prepare URL's to allow easy switch from deployment and localhost
-const url = "https://finalcptperiod4.duckdns.org/api/houses/"
-const create_fetch = url + '/create';
-const read_fetch = url + '/';
-read_users();
+  var url = "https://finalcptperiod4.duckdns.org/api/houses/"
 
-function read_users() {
+  
+
+  const create_fetch = url + '/create';
+  const read_fetch = url + '/';
+
+  // Load users on page entry
+  read_users();
+
+
+  // Display User Table, data is fetched from Backend Database
+  function read_users() {
     // prepare fetch options
     const read_options = {
       method: 'GET', // *GET, POST, PUT, DELETE, etc.
@@ -144,18 +141,21 @@ function read_users() {
       headers: {
         'Content-Type': 'application/json'
       },
-    };     // fetch the data from API
+    };
+
+    // fetch the data from API
     fetch(read_fetch, read_options)
       // response is a RESTful "promise" on any successful fetch
       .then(response => {
         // check for response errors
         if (response.status !== 200) {
             const errorMsg = 'Database read error: ' + response.status;
-            //console.log(errorMsg);
+            console.log(errorMsg);
             const tr = document.createElement("tr");
             const td = document.createElement("td");
             td.innerHTML = errorMsg;
             tr.appendChild(td);
+            resultContainer.appendChild(tr);
             return;
         }
         // valid response will have json data
@@ -163,13 +163,13 @@ function read_users() {
             console.log(data);
             for (let row in data) {
               console.log(data[row]);
-              //add_row(data[row]);
+              add_row(data[row]);
             }
         })
-    }) 
-      // catch fetch errors (ie ACCESS to server blocked)
+    })
+    // catch fetch errors (ie ACCESS to server blocked)
     .catch(err => {
-      //console.error(err);
+      console.error(err);
       const tr = document.createElement("tr");
       const td = document.createElement("td");
       td.innerHTML = err;
@@ -177,44 +177,16 @@ function read_users() {
       resultContainer.appendChild(tr);
     });
   }
-</script>
 
-		
-<br/>
-<h2>Add A House</h2>
-
-<form action="javascript:create_user()">
-    <p><label>
-        House Name:
-        <input type="text" name="addhouse" id="addnews" required>
-    </label></p>
-    <p><label>
-        Price:
-        <input type="text" name="addprice" id="addprice" required>
-    </label></p>
-    <p><label>
-        Beds:
-        <input type="text" name="addbeds" id="addbeds" required>
-    </label></p>
-    <p><label>
-        Baths:
-        <input type="text" name="addbaths" id="addbaths" required>
-    </label></p>
-
-    <p>
-        <button>Add A House</button>
-    </p>
-</form>
-
-<script>
- function create_user(){
+  function create_user(){
+    //Validate Password (must be 6-20 characters in len)
+    //verifyPassword("click");
     const body = {
-        title: document.getElementById("addhouse").value,
-        Price: document.getElementById("addprice").value , 
-        Beds: document.getElementById("addbeds").value,
-        Baths: document.getElementById("addbaths").value       
+        Price: document.getElementById("price").value,
+        Beds: document.getElementById("beds").value,
+       Baths: document.getElementById("baths").value,
+        Name: document.getElementById("name").value
     };
-
     const requestOptions = {
         method: 'POST',
         body: JSON.stringify(body),
@@ -224,17 +196,53 @@ function read_users() {
         },
     };
 
-  fetch("https://finalcptperiod4.duckdns.org/api/houses/create", requestOptions)
-    .then(response  => {
-       if (response.status == 200) {
-          const errorMsg = 'POST SUCCESS: ' + response.status;
+    // URL for Create API
+    // Fetch API call to the database to create a new user
+  
+    fetch(create_fetch, requestOptions)
+      .then(response => {
+        // trap error response from Web API
+        if (response.status !== 200) {
+          const errorMsg = 'Database create error: ' + response.status;
           console.log(errorMsg);
-          reset(); 
+          const tr = document.createElement("tr");
+          const td = document.createElement("td");
+          td.innerHTML = errorMsg;
+          tr.appendChild(td);
+          resultContainer.appendChild(tr);
           return;
         }
+        // response contains valid result
+        response.json().then(data => {
+            console.log(data);
+            //add a table row for the new/created userid
+            add_row(data);
+        })
     })
-    .catch(error => console.log('error', error))
- }
+  }
+
+  function add_row(data) {
+    const tr = document.createElement("tr");
+    const Price = document.createElement("td");
+    const Beds = document.createElement("td");
+    const Baths = document.createElement("td");
+    const Name = document.createElement("td")
+  
+
+    // obtain data that is specific to the API
+    Price.innerHTML = data.price; 
+    Beds.innerHTML = data.beds; 
+    Baths.innerHTML = data.baths; 
+    Name.innerHTML = data.name; 
+
+    // add HTML to container
+    tr.appendChild(Price);
+    tr.appendChild(Beds);
+    tr.appendChild(Baths);
+    tr.appendChild(Name);
+
+    resultContainer.appendChild(tr);
+  }
 
 </script>
       </div>
