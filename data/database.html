@@ -70,8 +70,8 @@ window.onload = wrap_img;
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
         <p>Add Your House/Find A House
-  1. Browse Available Houses 
-  2. Contact Us To Book In the review tabs
+  <br>1. Browse Available Houses 
+  <br>2. Contact Us To Book In the review tabs<br>
   3. Add a house for rental with the form
 
 </p>
@@ -111,7 +111,7 @@ window.onload = wrap_img;
     </label></p>
 
     <p>
-        <button> Add House</button>
+        <button> Add House </button>
     </p>
 </form>
 
@@ -182,10 +182,10 @@ window.onload = wrap_img;
     //Validate Password (must be 6-20 characters in len)
     //verifyPassword("click");
     const body = {
-        Price: document.getElementById("price").value,
-        Beds: document.getElementById("beds").value,
-       Baths: document.getElementById("baths").value,
-        Name: document.getElementById("name").value
+        price: document.getElementById("price").value,
+        beds: document.getElementById("beds").value,
+       baths: document.getElementById("baths").value,
+        name: document.getElementById("name").value
     };
     const requestOptions = {
         method: 'POST',
@@ -223,23 +223,23 @@ window.onload = wrap_img;
 
   function add_row(data) {
     const tr = document.createElement("tr");
-    const Price = document.createElement("td");
-    const Beds = document.createElement("td");
-    const Baths = document.createElement("td");
-    const Name = document.createElement("td")
+    const price = document.createElement("td");
+    const beds = document.createElement("td");
+    const baths = document.createElement("td");
+    const name = document.createElement("td")
   
 
     // obtain data that is specific to the API
-    Price.innerHTML = data.price; 
-    Beds.innerHTML = data.beds; 
-    Baths.innerHTML = data.baths; 
-    Name.innerHTML = data.name; 
+    price.innerHTML = data.price; 
+    beds.innerHTML = data.beds; 
+    baths.innerHTML = data.baths; 
+    name.innerHTML = data.name; 
 
     // add HTML to container
-    tr.appendChild(Price);
-    tr.appendChild(Beds);
-    tr.appendChild(Baths);
-    tr.appendChild(Name);
+    tr.appendChild(price);
+    tr.appendChild(beds);
+    tr.appendChild(baths);
+    tr.appendChild(name);
 
     resultContainer.appendChild(tr);
   }
