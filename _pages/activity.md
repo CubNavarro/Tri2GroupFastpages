@@ -1,5 +1,5 @@
 ---
-title: Activities
+Fun: Activities
 layout: base
 permalink: /data/activities
 tags: [javascript, fetch, get, post, put]
@@ -47,9 +47,9 @@ fetch("https://finalcptperiod4.duckdns.org/api/activities", requestOptions)
       AddressData.innerHTML = `${ev.Address}`
       row.appendChild(AddressData)
 
-      const titleData = document.createElement("td")
-      titleData.innerHTML = `<a href=${ev.link}> ${ev.title} </a>`
-      row.appendChild(titleData)
+      const FunData = document.createElement("td")
+      FunData.innerHTML = `<a href=${ev.link}> ${ev.Fun} </a>`
+      row.appendChild(FunData)
 
       document.getElementById("table").appendChild(row)
     })
@@ -64,8 +64,8 @@ function reset() {
 <script>
 const resultContainer = document.getElementById("result");
   // prepare URL's to allow easy switch from deployment and localhost
-//const url = "http://127.0.0.1:8086/api/breakingFun"
-const url = "https://fnvs.duckdns.org/api/breakingFun"
+//const url = "https://finalcptperiod4.duckdns.org/api/activities"
+const url = "https://finalcptperiod4.duckdns.org/api/activities"
 const create_fetch = url + '/create';
 const read_fetch = url + '/';
 read_users();
@@ -126,22 +126,22 @@ function read_users() {
     </label></p>
     <p><label>
         Address:
-        <input type="text" name="addAddress" id="addAddress" value="CNN" required>
+        <input type="text" name="addAddress" id="addAddress" value="addAddress" required>
     </label></p>
     <p><label>
         Activity:
-        <input type="text" name="addActivity" id="addActivity" value="San Diego" required>
+        <input type="text" name="addActivity" id="addActivity" value="addActivity" required>
     </label></p>
 
     <p>
-        <button>Input Breaking Fun</button>
+        <button>Input Activity</button>
     </p>
 </form>
 
 <script>
  function create_user(){
     const body = {
-        title: document.getElementById("addFun").value,
+        Fun: document.getElementById("addFun").value,
         Address: document.getElementById("addAddress").value,
         Activity: document.getElementById("addActivity").value        
     };
@@ -155,8 +155,8 @@ function read_users() {
         },
     };
 
-//fetch("http://127.0.0.1:8086/api/breakingFun/create", requestOptions)
-  fetch("https://fnvs.duckdns.org/api/breakingFun/create", requestOptions)
+//fetch("https://finalcptperiod4.duckdns.org/api/activities/create", requestOptions)
+  fetch("https://finalcptperiod4.duckdns.org/api/activities/create", requestOptions)
     .then(response  => {
        if (response.status == 200) {
           const errorMsg = 'POST SUCCESS: ' + response.status;
@@ -169,49 +169,3 @@ function read_users() {
  }
 
 </script>
-
-
-<br/>
-<h2>Delete Breaking Fun!!</h2>
-
-<form action="javascript:delete_Fun()">
-    <p><label>
-        Fun Item:
-        <input type="text" name="deleteFun" id="deleteFun" required>
-    </label></p>
-
-    <p>
-        <button>Delete Breaking Fun</button>
-    </p>
-</form>
-
-<script>
- function delete_Fun(){
-    const body = {
-        id: document.getElementById("deleteFun").value,
-    };
-
-    const requestOptions = {
-        method: 'DELETE',
-        mode: 'cors', // no-cors, *cors, same-origin
-        cache: 'default', // *default, no-cache, reload, force-cache, only-if-cached
-        credentials: 'omit', // include, *same-origin, omit	
-        body: JSON.stringify(body),
-        headers: {
-            "content-type": "application/json",
-            'Authorization': 'Bearer my-token',
-        },
-    };
-
-//fetch("http://127.0.0.1:8086/api/breakingFun/delete", requestOptions)
- fetch("https://fnvs.duckdns.org/api/breakingFun/delete", requestOptions)
-    .then(response  => {
-       if (response.status == 200) {
-          const errorMsg = 'DELETE SUCCESS: ' + response.status;
-          console.log(errorMsg);
-          reset(); 
-          return;
-        }
-    })
-    .catch(error => console.log('error', error))
- }
