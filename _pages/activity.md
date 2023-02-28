@@ -5,8 +5,7 @@ permalink: /data/activities
 tags: [javascript, fetch, get, post, put]
 ---
 
-<h1>On This Day: What Happened?</h1>
-
+<h1>Explore Activities To Do and You Can Use <a href="https://cubnavarro.github.io/Tri2GroupFastpages/markdown/" class="button">THIS</a> To Plan Your Activities </h1>
 
 <html>
 <body>
@@ -14,17 +13,11 @@ tags: [javascript, fetch, get, post, put]
 
 <table style="width:100%" id="table">
   <tr>
-    <th>Interesting Event that has happened on a day of this Week</th>
+    <th>An Activity That You Participated In</th>
   </tr>
 </table>
 
-
-
-
 <script>
-
-
-
 
 var requestOptions = {
   method: 'GET',
@@ -38,25 +31,18 @@ fetch("https://finalcptperiod4.duckdns.org/api/activities", requestOptions)
   r.forEach(ev => {
     const row = document.createElement("tr")
     const data = document.createElement("td")
-    data.innerHTML = `${ev.address}, ${ev.fun}: ${ev.activity}`
+    data.innerHTML = `${ev.activity}, ${ev.address}: ${ev.fun}`
     row.appendChild(data)
     document.getElementById("table").appendChild(row)
   })
   })
   .catch(error => console.log('error', error))
 
-
-
-
 function reset() {
   window.location.reload();
 }
 
-
-
-
 </script>
-
 
 <table>
   <thead>
@@ -129,7 +115,7 @@ function read_users() {
 
 <form action="javascript:create_user()">
  <p><label>
-        Tell Us Something that Happened on Your Favorite Day!
+        List An Activity That You Liked or Disliked!
         <input type="text" name="activity" id="activity" placeholder="Activity Name" required>
         <input type="text" name="activity" id="address" placeholder="Address" required>
         <input type="text" name="activity" id="fun" placeholder="Fun out of 10" required>
