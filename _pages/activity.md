@@ -5,16 +5,16 @@ permalink: /data/activities
 tags: [javascript, fetch, get, post, put]
 ---
 
-<h1>Breaking News!!</h1>
+<h1>Breaking Fun!!</h1>
 <br/>
 
 <table  style="width:100%" id = "table">
   <thead>
   <tr>
     <th>Item</th>
-    <th>City</th>
-    <th>Network</th>
-    <th>News</th>
+    <th>Activity</th>
+    <th>Address</th>
+    <th>Fun</th>
   </tr>
   </thead>
   <tbody id="result">
@@ -29,8 +29,8 @@ var requestOptions = {
   redirect: 'follow'
 };
 
-//fetch("http://127.0.0.1:8086/api/breakingnews", requestOptions)
-fetch("https://fnvs.duckdns.org/api/breakingnews", requestOptions)
+//fetch("https://finalcptperiod4.duckdns.org/api/activities", requestOptions)
+fetch("https://finalcptperiod4.duckdns.org/api/activities", requestOptions)
   .then(response => response.json())
   .then(r => {
     r.forEach(ev => {
@@ -39,13 +39,13 @@ fetch("https://fnvs.duckdns.org/api/breakingnews", requestOptions)
       itemData.innerHTML = `${ev.id}`
       row.appendChild(itemData)
 
-      const cityData = document.createElement("td")
-      cityData.innerHTML = `${ev.city}`
-      row.appendChild(cityData)
+      const ActivityData = document.createElement("td")
+      ActivityData.innerHTML = `${ev.Activity}`
+      row.appendChild(ActivityData)
 
-      const networkData = document.createElement("td")
-      networkData.innerHTML = `${ev.network}`
-      row.appendChild(networkData)
+      const AddressData = document.createElement("td")
+      AddressData.innerHTML = `${ev.Address}`
+      row.appendChild(AddressData)
 
       const titleData = document.createElement("td")
       titleData.innerHTML = `<a href=${ev.link}> ${ev.title} </a>`
@@ -64,8 +64,8 @@ function reset() {
 <script>
 const resultContainer = document.getElementById("result");
   // prepare URL's to allow easy switch from deployment and localhost
-//const url = "http://127.0.0.1:8086/api/breakingnews"
-const url = "https://fnvs.duckdns.org/api/breakingnews"
+//const url = "http://127.0.0.1:8086/api/breakingFun"
+const url = "https://fnvs.duckdns.org/api/breakingFun"
 const create_fetch = url + '/create';
 const read_fetch = url + '/';
 read_users();
@@ -117,33 +117,33 @@ function read_users() {
 
 		
 <br/>
-<h2>Add Breaking News!!</h2>
+<h2>Add Breaking Fun!!</h2>
 
 <form action="javascript:create_user()">
     <p><label>
-        News:
-        <input type="text" name="addnews" id="addnews" required>
+        Fun:
+        <input type="text" name="addFun" id="addFun" required>
     </label></p>
     <p><label>
-        Network:
-        <input type="text" name="addnetwork" id="addnetwork" value="CNN" required>
+        Address:
+        <input type="text" name="addAddress" id="addAddress" value="CNN" required>
     </label></p>
     <p><label>
-        City:
-        <input type="text" name="addcity" id="addcity" value="San Diego" required>
+        Activity:
+        <input type="text" name="addActivity" id="addActivity" value="San Diego" required>
     </label></p>
 
     <p>
-        <button>Input Breaking News</button>
+        <button>Input Breaking Fun</button>
     </p>
 </form>
 
 <script>
  function create_user(){
     const body = {
-        title: document.getElementById("addnews").value,
-        network: document.getElementById("addnetwork").value,
-        city: document.getElementById("addcity").value        
+        title: document.getElementById("addFun").value,
+        Address: document.getElementById("addAddress").value,
+        Activity: document.getElementById("addActivity").value        
     };
 
     const requestOptions = {
@@ -155,8 +155,8 @@ function read_users() {
         },
     };
 
-//fetch("http://127.0.0.1:8086/api/breakingnews/create", requestOptions)
-  fetch("https://fnvs.duckdns.org/api/breakingnews/create", requestOptions)
+//fetch("http://127.0.0.1:8086/api/breakingFun/create", requestOptions)
+  fetch("https://fnvs.duckdns.org/api/breakingFun/create", requestOptions)
     .then(response  => {
        if (response.status == 200) {
           const errorMsg = 'POST SUCCESS: ' + response.status;
@@ -172,23 +172,23 @@ function read_users() {
 
 
 <br/>
-<h2>Delete Breaking News!!</h2>
+<h2>Delete Breaking Fun!!</h2>
 
-<form action="javascript:delete_news()">
+<form action="javascript:delete_Fun()">
     <p><label>
-        News Item:
-        <input type="text" name="deletenews" id="deletenews" required>
+        Fun Item:
+        <input type="text" name="deleteFun" id="deleteFun" required>
     </label></p>
 
     <p>
-        <button>Delete Breaking News</button>
+        <button>Delete Breaking Fun</button>
     </p>
 </form>
 
 <script>
- function delete_news(){
+ function delete_Fun(){
     const body = {
-        id: document.getElementById("deletenews").value,
+        id: document.getElementById("deleteFun").value,
     };
 
     const requestOptions = {
@@ -203,8 +203,8 @@ function read_users() {
         },
     };
 
-//fetch("http://127.0.0.1:8086/api/breakingnews/delete", requestOptions)
- fetch("https://fnvs.duckdns.org/api/breakingnews/delete", requestOptions)
+//fetch("http://127.0.0.1:8086/api/breakingFun/delete", requestOptions)
+ fetch("https://fnvs.duckdns.org/api/breakingFun/delete", requestOptions)
     .then(response  => {
        if (response.status == 200) {
           const errorMsg = 'DELETE SUCCESS: ' + response.status;
@@ -215,110 +215,3 @@ function read_users() {
     })
     .catch(error => console.log('error', error))
  }
-
-</script>
-
-<table>
-  <thead>
-  <tr>
-    <th>User ID</th>
-    <th>New activity for this Week</th>
-  </tr>
-  </thead>
-  <tbody id="result">
-    <!-- javascript generated data -->
-  </tbody>
-</table>
-
-
-<script>
-
-
-const resultContainer = document.getElementById("result");
-  // prepare URL's to allow easy switch from deployment and localhost
- var url = "https://finalcptperiod4.duckdns.org/api/activities"
-  //const url = "https://flask.nighthawkcodingsociety.com/api/users"
-const create_fetch = url + '/create';
-const read_fetch = url + '/';
-read_users();
-
-
-function read_users() {
-    // prepare fetch options
-    const read_options = {
-      method: 'GET', // *GET, POST, PUT, DELETE, etc.
-      mode: 'cors', // no-cors, *cors, same-origin
-      cache: 'default', // *default, no-cache, reload, force-cache, only-if-cached
-      credentials: 'omit', // include, *same-origin, omit
-      headers: {
-        'Content-Type': 'application/json'
-      },
-    };     // fetch the data from API
-    fetch(read_fetch, read_options)
-      // response is a RESTful "promise" on any successful fetch
-      .then(response => {
-        // check for response errors
-        if (response.status !== 200) {
-            const errorMsg = 'Database read error: ' + response.status;
-            console.log(errorMsg);
-            const tr = document.createElement("tr");
-            const td = document.createElement("td");
-            td.innerHTML = errorMsg;
-            tr.appendChild(td);
-            return;
-        }
-        // valid response will have json data
-        response.json().then(data => {
-            console.log(data);
-            for (let row in data) {
-              console.log(data[row]);
-              add_row(data[row]);
-            }
-        })
-    })
-      // catch fetch errors (ie ACCESS to server blocked)
-    .catch(err => {
-      console.error(err);
-      const tr = document.createElement("tr");
-      const td = document.createElement("td");
-      td.innerHTML = err;
-      tr.appendChild(td);
-      resultContainer.appendChild(tr);
-    });
-  }
-</script>
-
-
-<form action="javascript:create_user()">
- <p><label>
-        Tell Us Something that Happened on Your Favorite Day!
-        <input type="text" name="activity" id="activity" placeholder="activity" required>
-        <input type="text" name="activity" id="address" placeholder="address" required>
-        <input type="text" name="activity" id="fun" placeholder="fun" required>
-
-
-    </label></p>
-    <p><button>Add</button></p>
-</form>
-
-
-<script>
-  function create_user() {
-    fetch("https://finalcptperiod4.duckdns.org/api/activities/create", {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({activity:document.getElementById("activity").value,address:document.getElementById("address").value,fun:document.getElementById("fun").value})
-    }).then(e => console.log(
-     
-      "yay"
-    ));
-  }
-</script>
-
-
-</body>
-
-
-</html>
