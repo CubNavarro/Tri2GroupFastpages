@@ -7,10 +7,8 @@ tags: [javascript, fetch, get, post, put]
 
 <h1>On This Day: What Happened?</h1>
 
-
 <html>
 <body>
-
 
 <table style="width:100%" id="table">
   <tr>
@@ -19,7 +17,6 @@ tags: [javascript, fetch, get, post, put]
 </table>
 
 <script>
-
 
 var requestOptions = {
   method: 'GET',
@@ -33,7 +30,7 @@ fetch("https://finalcptperiod4.duckdns.org/api/activities/", requestOptions)
   r.forEach(ev => {
     const row = document.createElement("tr")
     const data = document.createElement("td")
-    data.innerHTML = `${ev.activity}, ${ev.adress}: ${ev.fun}`
+    data.innerHTML = `${ev.activity}, ${ev.address}: ${ev.fun}`
     row.appendChild(data)
     document.getElementById("table").appendChild(row)
   })
