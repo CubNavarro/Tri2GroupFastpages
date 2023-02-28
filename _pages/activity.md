@@ -64,7 +64,7 @@ function reset() {
 
 const resultContainer = document.getElementById("result");
   // prepare URL's to allow easy switch from deployment and localhost
- var url = "https://finalcptperiod4.duckdns.org/api/activities"
+const url = "https://finalcptperiod4.duckdns.org/api/activities"
   //const url = "https://flask.nighthawkcodingsociety.com/api/users"
 const create_fetch = url + '/create';
 const read_fetch = url + '/';
@@ -123,8 +123,6 @@ function read_users() {
         <input type="text" name="activity" id="activity" placeholder="Activity" required>
         <input type="text" name="activity" id="address" placeholder="Address" required>
         <input type="text" name="activity" id="fun" placeholder="Fun" required>
-
-
     </label></p>
     <p><button>Add</button></p>
 </form>
