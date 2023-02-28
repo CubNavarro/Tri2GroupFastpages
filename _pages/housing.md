@@ -1,3 +1,9 @@
+---
+layout: base
+permalink: /activities/
+title: Activities
+search_exclude: true
+---
 <h1>PICK AN ACTIVITY!!</h1>
 
 
