@@ -1,8 +1,8 @@
 ---
-layout: base
-permalink: /activities/
 title: Activities
-search_exclude: true
+layout: base
+permalink: /data/activities
+tags: [javascript, fetch, get, post, put]
 ---
 
 <h1>On This Day: What Happened?</h1>
@@ -18,13 +18,7 @@ search_exclude: true
   </tr>
 </table>
 
-
-
-
 <script>
-
-
-
 
 var requestOptions = {
   method: 'GET',
@@ -76,14 +70,14 @@ function reset() {
 
 const resultContainer = document.getElementById("result");
   // prepare URL's to allow easy switch from deployment and localhost
-const url = "https://finalcptperiod4.duckdns.org"
+const url = "https://finalcptperiod4.duckdns.org/api/activities"
   //const url = "https://flask.nighthawkcodingsociety.com/api/users"
 const create_fetch = url + '/create';
 const read_fetch = url + '/';
 read_users();
 
-
-function read_users() {
+  // Display User Table, data is fetched from Backend Database
+  function read_users() {
     // prepare fetch options
     const read_options = {
       method: 'GET', // *GET, POST, PUT, DELETE, etc.
@@ -93,7 +87,9 @@ function read_users() {
       headers: {
         'Content-Type': 'application/json'
       },
-    };     // fetch the data from API
+    };
+
+    // fetch the data from API
     fetch(read_fetch, read_options)
       // response is a RESTful "promise" on any successful fetch
       .then(response => {
@@ -105,6 +101,7 @@ function read_users() {
             const td = document.createElement("td");
             td.innerHTML = errorMsg;
             tr.appendChild(td);
+            resultContainer.appendChild(tr);
             return;
         }
         // valid response will have json data
@@ -116,7 +113,7 @@ function read_users() {
             }
         })
     })
-      // catch fetch errors (ie ACCESS to server blocked)
+    // catch fetch errors (ie ACCESS to server blocked)
     .catch(err => {
       console.error(err);
       const tr = document.createElement("tr");
@@ -143,22 +140,49 @@ function read_users() {
 
 
 <script>
-  function create_user() {
-    fetch("https://finalcptperiod4.duckdns.org/api/activities/create", {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({activity:document.getElementById("activity").value,address:document.getElementById("address").value,fun:document.getElementById("fun").value})
-    }).then(e => console.log(
-     
-      "yay"
-    ));
+  fetch(create_fetch, requestOptions)
+      .then(response => {
+        // trap error response from Web API
+        if (response.status !== 200) {
+          const errorMsg = 'Database create error: ' + response.status;
+          console.log(errorMsg);
+          const tr = document.createElement("tr");
+          const td = document.createElement("td");
+          td.innerHTML = errorMsg;
+          tr.appendChild(td);
+          resultContainer.appendChild(tr);
+          return;
+        }
+        // response contains valid result
+        response.json().then(data => {
+            console.log(data);
+            //add a table row for the new/created userid
+            add_row(data);
+        })
+    })
+
+  function add_row(data) {
+    const tr = document.createElement("tr");
+    const activity = document.createElement("td");
+    const address = document.createElement("td");
+    const fun = document.createElement("td");
+  
+
+    // obtain data that is specific to the API
+    activity.innerHTML = data.activity; 
+    address.innerHTML = data.address; 
+    fun.innerHTML = data.fun; 
+
+    // add HTML to container
+    tr.appendChild(activity);
+    tr.appendChild(address);
+    tr.appendChild(fun);
+
+    resultContainer.appendChild(tr);
   }
+
 </script>
 
-
 </body>
-
 
 </html>
