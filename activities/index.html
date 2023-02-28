@@ -95,13 +95,13 @@ var requestOptions = {
 };
 
 
-fetch("https://fnvs.duckdns.org/api/fact", requestOptions)
+fetch("https://finalcptperiod4.duckdns.org/api/activities/", requestOptions)
   .then(response => response.json())
   .then(r => {
   r.forEach(ev => {
     const row = document.createElement("tr")
     const data = document.createElement("td")
-    data.innerHTML = `${ev.date}, ${ev.year}: ${ev.fact}`
+    data.innerHTML = `${ev.address}, ${ev.fun}: ${ev.activity}`
     row.appendChild(data)
     document.getElementById("table").appendChild(row)
   })
@@ -125,7 +125,7 @@ function reset() {
   <thead>
   <tr>
     <th>User ID</th>
-    <th>New Fact for this Week</th>
+    <th>New activity for this Week</th>
   </tr>
   </thead>
   <tbody id="result">
@@ -139,7 +139,7 @@ function reset() {
 
 const resultContainer = document.getElementById("result");
   // prepare URL's to allow easy switch from deployment and localhost
-const url = "https://fnvs.duckdns.org/api/fact"
+const url = "https://finalcptperiod4.duckdns.org/api/active"
   //const url = "https://flask.nighthawkcodingsociety.com/api/users"
 const create_fetch = url + '/create';
 const read_fetch = url + '/';
@@ -195,9 +195,9 @@ function read_users() {
 <form action="javascript:create_user()">
  <p><label>
         Tell Us Something that Happened on Your Favorite Day!
-        <input type="text" name="fact" id="fact" placeholder="fact" required="" />
-        <input type="text" name="fact" id="date" placeholder="day/month" required="" />
-        <input type="number" name="fact" id="year" placeholder="year" required="" />
+        <input type="text" name="activity" id="activity" placeholder="activity" required="" />
+        <input type="text" name="activity" id="address" placeholder="address" required="" />
+        <input type="number" name="activity" id="fun" placeholder="fun" required="" />
 
 
     </label></p>
@@ -207,12 +207,12 @@ function read_users() {
 
 <script>
   function create_user() {
-    fetch("https://fnvs.duckdns.org/api/fact/create", {
+    fetch("https://finalcptperiod4.duckdns.org/api/activities/create", {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({fact:document.getElementById("fact").value,date:document.getElementById("date").value,year:document.getElementById("year").valueAsNumber})
+      body: JSON.stringify({activity:document.getElementById("activity").value,address:document.getElementById("address").value,fun:document.getElementById("fun").valueAsNumber})
     }).then(e => console.log(
      
       "yay"
