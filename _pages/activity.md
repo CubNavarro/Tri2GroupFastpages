@@ -1,25 +1,19 @@
 ---
-Fun: Activities
+title: Activities
 layout: base
 permalink: /data/activities
 tags: [javascript, fetch, get, post, put]
 ---
 
-<h1>Breaking Fun!!</h1>
-<br/>
+<h1>On This Day: What Happened?</h1>
 
-<table  style="width:100%" id = "table">
-  <thead>
+<html>
+<body>
+
+<table style="width:100%" id="table">
   <tr>
-    <th>Item</th>
-    <th>Activity</th>
-    <th>Address</th>
-    <th>Fun</th>
+    <th>Interesting Event that has happened on a day of this Week</th>
   </tr>
-  </thead>
-  <tbody id="result">
-    <!-- javascript generated data -->
-  </tbody>
 </table>
 
 <script>
@@ -29,46 +23,50 @@ var requestOptions = {
   redirect: 'follow'
 };
 
-//fetch("https://finalcptperiod4.duckdns.org/api/activities", requestOptions)
-fetch("https://finalcptperiod4.duckdns.org/api/activities", requestOptions)
+
+fetch("https://finalcptperiod4.duckdns.org/api/activities/", requestOptions)
   .then(response => response.json())
   .then(r => {
-    r.forEach(ev => {
-      const row = document.createElement("tr")
-      const itemData = document.createElement("td")
-      itemData.innerHTML = `${ev.id}`
-      row.appendChild(itemData)
-
-      const ActivityData = document.createElement("td")
-      ActivityData.innerHTML = `${ev.Activity}`
-      row.appendChild(ActivityData)
-
-      const AddressData = document.createElement("td")
-      AddressData.innerHTML = `${ev.Address}`
-      row.appendChild(AddressData)
-
-      const FunData = document.createElement("td")
-      FunData.innerHTML = `<a href=${ev.link}> ${ev.Fun} </a>`
-      row.appendChild(FunData)
-
-      document.getElementById("table").appendChild(row)
-    })
+  r.forEach(ev => {
+    const row = document.createElement("tr")
+    const data = document.createElement("td")
+    data.innerHTML = `${ev.activity}, ${ev.address}: ${ev.fun}`
+    row.appendChild(data)
+    document.getElementById("table").appendChild(row)
+  })
   })
   .catch(error => console.log('error', error))
 
 function reset() {
   window.location.reload();
 }
+
 </script>
 
+<table>
+  <thead>
+  <tr>
+    <th>User ID</th>
+    <th>New activity for this Week</th>
+  </tr>
+  </thead>
+  <tbody id="result">
+    <!-- javascript generated data -->
+  </tbody>
+</table>
+
+
 <script>
+
+
 const resultContainer = document.getElementById("result");
   // prepare URL's to allow easy switch from deployment and localhost
-//const url = "https://finalcptperiod4.duckdns.org/api/activities"
-const url = "https://finalcptperiod4.duckdns.org/api/activities"
+ var url = "https://finalcptperiod4.duckdns.org/api/activities"
+  //const url = "https://flask.nighthawkcodingsociety.com/api/users"
 const create_fetch = url + '/create';
 const read_fetch = url + '/';
 read_users();
+
 
 function read_users() {
     // prepare fetch options
@@ -87,7 +85,7 @@ function read_users() {
         // check for response errors
         if (response.status !== 200) {
             const errorMsg = 'Database read error: ' + response.status;
-            //console.log(errorMsg);
+            console.log(errorMsg);
             const tr = document.createElement("tr");
             const td = document.createElement("td");
             td.innerHTML = errorMsg;
@@ -99,13 +97,13 @@ function read_users() {
             console.log(data);
             for (let row in data) {
               console.log(data[row]);
-              //add_row(data[row]);
+              add_row(data[row]);
             }
         })
-    }) 
+    })
       // catch fetch errors (ie ACCESS to server blocked)
     .catch(err => {
-      //console.error(err);
+      console.error(err);
       const tr = document.createElement("tr");
       const td = document.createElement("td");
       td.innerHTML = err;
@@ -115,57 +113,37 @@ function read_users() {
   }
 </script>
 
-		
-<br/>
-<h2>Add Breaking Fun!!</h2>
 
 <form action="javascript:create_user()">
-    <p><label>
-        Fun:
-        <input type="text" name="addFun" id="addFun" required>
-    </label></p>
-    <p><label>
-        Address:
-        <input type="text" name="addAddress" id="addAddress" value="addAddress" required>
-    </label></p>
-    <p><label>
-        Activity:
-        <input type="text" name="addActivity" id="addActivity" value="addActivity" required>
-    </label></p>
+ <p><label>
+        Tell Us Something that Happened on Your Favorite Day!
+        <input type="text" name="activity" id="activity" placeholder="activity" required>
+        <input type="text" name="activity" id="address" placeholder="address" required>
+        <input type="text" name="activity" id="fun" placeholder="fun" required>
 
-    <p>
-        <button>Input Activity</button>
-    </p>
+
+    </label></p>
+    <p><button>Add</button></p>
 </form>
 
+
 <script>
- function create_user(){
-    const body = {
-        Fun: document.getElementById("addFun").value,
-        Address: document.getElementById("addAddress").value,
-        Activity: document.getElementById("addActivity").value        
-    };
-
-    const requestOptions = {
-        method: 'POST',
-        body: JSON.stringify(body),
-        headers: {
-            "content-type": "application/json",
-            'Authorization': 'Bearer my-token',
-        },
-    };
-
-//fetch("https://finalcptperiod4.duckdns.org/api/activities/create", requestOptions)
-  fetch("https://finalcptperiod4.duckdns.org/api/activities/create", requestOptions)
-    .then(response  => {
-       if (response.status == 200) {
-          const errorMsg = 'POST SUCCESS: ' + response.status;
-          console.log(errorMsg);
-          reset(); 
-          return;
-        }
-    })
-    .catch(error => console.log('error', error))
- }
-
+  function create_user() {
+    fetch("https://finalcptperiod4.duckdns.org/api/activities/create", {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({activity:document.getElementById("activity").value,address:document.getElementById("address").value,fun:document.getElementById("fun").value})
+    }).then(e => console.log(
+     
+      "yay"
+    ));
+  }
 </script>
+
+
+</body>
+
+
+</html>
