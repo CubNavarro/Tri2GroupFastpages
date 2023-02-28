@@ -74,7 +74,6 @@ window.onload = wrap_img;
 <html>
 <body>
 
-
 <table style="width:100%" id="table">
   <tr>
     <th>Interesting Event that has happened on a day of this Week</th>
@@ -82,7 +81,6 @@ window.onload = wrap_img;
 </table>
 
 <script>
-
 
 var requestOptions = {
   method: 'GET',
@@ -96,7 +94,7 @@ fetch("https://finalcptperiod4.duckdns.org/api/activities/", requestOptions)
   r.forEach(ev => {
     const row = document.createElement("tr")
     const data = document.createElement("td")
-    data.innerHTML = `${ev.activity}, ${ev.adress}: ${ev.fun}`
+    data.innerHTML = `${ev.activity}, ${ev.address}: ${ev.fun}`
     row.appendChild(data)
     document.getElementById("table").appendChild(row)
   })
