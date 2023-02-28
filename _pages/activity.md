@@ -132,9 +132,9 @@ function read_users() {
 <form action="javascript:create_user()">
  <p><label>
         Tell Us Something that Happened on Your Favorite Day!
-        <input type="text" name="activity" id="activity" placeholder="activity" required>
-        <input type="text" name="activity" id="address" placeholder="day/month" required>
-        <input type="text" name="activity" id="fun" placeholder="fun" required>
+        <input type="text" name="activity" id="activity" placeholder="Activity Name" required>
+        <input type="text" name="activity" id="address" placeholder="Address" required>
+        <input type="text" name="activity" id="fun" placeholder="Fun out of 10" required>
 
 
     </label></p>
