@@ -40,9 +40,7 @@
   
 
   
-
-  
-      ,"page6": {
+      ,"page5": {
           "title": "Add/Explore Houses",
           "content": "Add Your House/Find A House 1. Browse Available Houses 2. Contact Us To Book In the review tabs 3. Add a house for rental with the form . Price Beds Baths Name . Housing . Name: . Price: . Beds: . Baths: . Add House .",
           "url": "https://cubnavarro.github.io/Tri2GroupFastpages/data/database",
@@ -75,7 +73,7 @@
   
 
   
-      ,"page15": {
+      ,"page14": {
           "title": "",
           "content": "Sitemap: {{ “sitemap.xml” | absolute_url }} | .",
           "url": "https://cubnavarro.github.io/Tri2GroupFastpages/robots.txt",
