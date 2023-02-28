@@ -1,12 +1,11 @@
 ---
-layout: base
-permalink: /activities/
 title: Activities
-search_exclude: true
+layout: base
+permalink: /data/activities
+tags: [javascript, fetch, get, post, put]
 ---
 
-<h1>On This Day: What Happened?</h1>
-
+<h1>Explore Activities To Do and You Can Use <a href="https://cubnavarro.github.io/Tri2GroupFastpages/markdown/" class="button">THIS</a> To Plan Your Activities </h1>
 
 <html>
 <body>
@@ -14,17 +13,11 @@ search_exclude: true
 
 <table style="width:100%" id="table">
   <tr>
-    <th>Interesting Event that has happened on a day of this Week</th>
+    <th>An Activity That You Participated In</th>
   </tr>
 </table>
 
-
-
-
 <script>
-
-
-
 
 var requestOptions = {
   method: 'GET',
@@ -32,37 +25,28 @@ var requestOptions = {
 };
 
 
-fetch("https://finalcptperiod4.duckdns.org/api/activities/", requestOptions)
+fetch("https://finalcptperiod4.duckdns.org/api/activities", requestOptions)
   .then(response => response.json())
   .then(r => {
   r.forEach(ev => {
     const row = document.createElement("tr")
     const data = document.createElement("td")
-    data.innerHTML = `${ev.address}, ${ev.fun}: ${ev.activity}`
+    data.innerHTML = `${ev.activity}, ${ev.address}: ${ev.fun}`
     row.appendChild(data)
     document.getElementById("table").appendChild(row)
   })
   })
   .catch(error => console.log('error', error))
 
-
-
-
 function reset() {
   window.location.reload();
 }
 
-
-
-
 </script>
-
 
 <table>
   <thead>
   <tr>
-    <th>User ID</th>
-    <th>New activity for this Week</th>
   </tr>
   </thead>
   <tbody id="result">
@@ -76,7 +60,7 @@ function reset() {
 
 const resultContainer = document.getElementById("result");
   // prepare URL's to allow easy switch from deployment and localhost
-const url = "https://finalcptperiod4.duckdns.org/api/active"
+const url = "https://finalcptperiod4.duckdns.org/api/activities"
   //const url = "https://flask.nighthawkcodingsociety.com/api/users"
 const create_fetch = url + '/create';
 const read_fetch = url + '/';
@@ -131,10 +115,10 @@ function read_users() {
 
 <form action="javascript:create_user()">
  <p><label>
-        Tell Us Something that Happened on Your Favorite Day!
-        <input type="text" name="activity" id="activity" placeholder="activity" required>
-        <input type="text" name="activity" id="address" placeholder="address" required>
-        <input type="number" name="activity" id="fun" placeholder="fun" required>
+        List An Activity That You Liked or Disliked!
+        <input type="text" name="activity" id="activity" placeholder="Activity Name" required>
+        <input type="text" name="activity" id="address" placeholder="Address" required>
+        <input type="text" name="activity" id="fun" placeholder="Fun out of 10" required>
 
 
     </label></p>
@@ -149,7 +133,7 @@ function read_users() {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({activity:document.getElementById("activity").value,address:document.getElementById("address").value,fun:document.getElementById("fun").valueAsNumber})
+      body: JSON.stringify({activity:document.getElementById("activity").value,address:document.getElementById("address").value,fun:document.getElementById("fun").value})
     }).then(e => console.log(
      
       "yay"
