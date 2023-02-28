@@ -1,5 +1,5 @@
 ---
-layout: base
+layout: page
 title: Schedule Maker
 permalink: /markdown/
 ---
@@ -15,8 +15,8 @@ permalink: /markdown/
   <tr>
     <th><label for="input">Activities:</label></th>
     <th><label for="week">Choose a Day:</label></th>
-    <button onclick="Reset()">Reset</button>
-    <th>Apply</th>
+    <th><button onclick="Reset()">Reset</button></th>
+    <th><button onclick="Save()">Save</button></th>
   </tr>
   <tr>
     <td><input id="input"></td>
@@ -64,13 +64,39 @@ permalink: /markdown/
     var week = document.getElementById("week").value;
     var day = document.getElementById(week.toLowerCase());
     day.innerHTML = day.innerHTML + "<br>" + input;
-    
-fetch()
-  .then((response) => response.json())
-  .then((data) => console.log(data));
-  
-}
+  }
 
+  function Reset(){
+    localStorage.clear();
+    location.reload();
+  }
 
+  function Save(){
+    var schedule = {
+      "Monday": document.getElementById("monday").innerHTML,
+      "Tuesday": document.getElementById("tuesday").innerHTML,
+      "Wednesday": document.getElementById("wednesday").innerHTML,
+      "Thursday": document.getElementById("thursday").innerHTML,
+      "Friday": document.getElementById("friday").innerHTML,
+      "Saturday": document.getElementById("saturday").innerHTML,
+      "Sunday": document.getElementById("sunday").innerHTML
+    };
+    localStorage.setItem("schedule", JSON.stringify(schedule));
+    alert("Your schedule has been saved.");
+  }
+
+  function Load(){
+    var schedule = JSON.parse(localStorage.getItem("schedule"));
+    if(schedule){
+      document.getElementById("monday").innerHTML = schedule.Monday;
+      document.getElementById("tuesday").innerHTML = schedule.Tuesday;
+      document.getElementById("wednesday").innerHTML = schedule.Wednesday;
+      document.getElementById("thursday").innerHTML = schedule.Thursday;
+      document.getElementById("friday").innerHTML = schedule.Friday;
+      document.getElementById("saturday").innerHTML = schedule.Saturday;
+      document.getElementById("sunday").innerHTML = schedule.Sunday;
+    }
+  }
+
+  Load();
 </script>
-
