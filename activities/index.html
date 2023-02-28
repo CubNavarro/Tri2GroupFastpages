@@ -4,20 +4,20 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Rental Retreats | An easy to use blogging platform with support for Jupyter Notebooks.</title>
+<title>Activities | Rental Retreats</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="Rental Retreats" />
+<meta property="og:title" content="Activities" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
 <meta property="og:description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
-<link rel="canonical" href="https://cubnavarro.github.io/Tri2GroupFastpages/404.html" />
-<meta property="og:url" content="https://cubnavarro.github.io/Tri2GroupFastpages/404.html" />
+<link rel="canonical" href="https://cubnavarro.github.io/Tri2GroupFastpages/activities/" />
+<meta property="og:url" content="https://cubnavarro.github.io/Tri2GroupFastpages/activities/" />
 <meta property="og:site_name" content="Rental Retreats" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Rental Retreats" />
+<meta property="twitter:title" content="Activities" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"An easy to use blogging platform with support for Jupyter Notebooks.","headline":"Rental Retreats","url":"https://cubnavarro.github.io/Tri2GroupFastpages/404.html"}</script>
+{"@context":"https://schema.org","@type":"WebPage","description":"An easy to use blogging platform with support for Jupyter Notebooks.","headline":"Activities","url":"https://cubnavarro.github.io/Tri2GroupFastpages/activities/"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/Tri2GroupFastpages/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://cubnavarro.github.io/Tri2GroupFastpages/feed.xml" title="Rental Retreats" /><link rel="shortcut icon" type="image/x-icon" href="/Tri2GroupFastpages/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -69,25 +69,150 @@ window.onload = wrap_img;
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
+        <h1>PICK AN ACTIVITY!!</h1>
 
-<div class="container">
-  <h1>404</h1>
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
-</div>
+<html>
+<body>
+
+
+<table style="width:100%" id="table">
+  <tr>
+    <th>Below are activities you can choose to do!</th>
+  </tr>
+</table>
+
+<script>
+
+var requestOptions = {
+  method: 'GET',
+  redirect: 'follow'
+};
+
+
+fetch("https://finalcptperiod4.duckdns.org/api/activities", requestOptions)
+  .then(response => response.json())
+  .then(r => {
+  r.forEach(ev => {
+    const row = document.createElement("tr")
+    const data = document.createElement("td")
+    data.innerHTML = `${ev.address}, ${ev.fun}: ${ev.activity}`
+    row.appendChild(data)
+    document.getElementById("table").appendChild(row)
+  })
+  })
+  .catch(error => console.log('error', error))
+
+function reset() {
+  window.location.reload();
+}
+
+
+</script>
+
+
+<table>
+  <thead>
+  <tr>
+    <th>New Activity</th>
+  </tr>
+  </thead>
+  <tbody id="result">
+    <!-- javascript generated data -->
+  </tbody>
+</table>
+
+
+<script>
+
+
+const resultContainer = document.getElementById("result");
+  // prepare URL's to allow easy switch from deployment and localhost
+const url = "https://finalcptperiod4.duckdns.org/api/activities/"
+  //const url = "https://flask.nighthawkcodingsociety.com/api/users"
+const create_fetch = url + '/create';
+const read_fetch = url + '/';
+read_users();
+
+
+function read_users() {
+    // prepare fetch options
+    const read_options = {
+      method: 'GET', // *GET, POST, PUT, DELETE, etc.
+      mode: 'cors', // no-cors, *cors, same-origin
+      cache: 'default', // *default, no-cache, reload, force-cache, only-if-cached
+      credentials: 'omit', // include, *same-origin, omit
+      headers: {
+        'Content-Type': 'application/json'
+      },
+    };     // fetch the data from API
+    fetch(read_fetch, read_options)
+      // response is a RESTful "promise" on any successful fetch
+      .then(response => {
+        // check for response errors
+        if (response.status !== 200) {
+            const errorMsg = 'Database read error: ' + response.status;
+            console.log(errorMsg);
+            const tr = document.createElement("tr");
+            const td = document.createElement("td");
+            td.innerHTML = errorMsg;
+            tr.appendChild(td);
+            return;
+        }
+        // valid response will have json data
+        response.json().then(data => {
+            console.log(data);
+            for (let row in data) {
+              console.log(data[row]);
+              add_row(data[row]);
+            }
+        })
+    })
+      // catch fetch errors (ie ACCESS to server blocked)
+    .catch(err => {
+      console.error(err);
+      const tr = document.createElement("tr");
+      const td = document.createElement("td");
+      td.innerHTML = err;
+      tr.appendChild(td);
+      resultContainer.appendChild(tr);
+    });
+  }
+</script>
+
+
+<form action="javascript:create_user()">
+ <p><label>
+        Tell Us an Activity You Did!
+        <input type="text" name="activity" id="activity" placeholder="activity" required="" />
+        <input type="text" name="activity" id="address" placeholder="address" required="" />
+        <input type="text" name="activity" id="fun" placeholder="out of 10" required="" />
+
+
+    </label></p>
+    <p><button>Add</button></p>
+</form>
+
+
+<script>
+  function create_user() {
+    fetch("https://finalcptperiod4.duckdns.org/api/activities/create", {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({activity:document.getElementById("activity").value,address:document.getElementById("address").value,fun:document.getElementById("fun").valueAsNumber})
+    }).then(e => console.log(
+     
+      "yay"
+    ));
+  }
+</script>
+
+
+</body>
+
+
+</html>
 
       </div>
     </main><footer class="site-footer h-card">
