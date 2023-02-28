@@ -5,6 +5,7 @@ title: Activities
 search_exclude: true
 ---
 <h1>PICK AN ACTIVITY!!</h1>
+<h3>You can use <a href='https://cubnavarro.github.io/Tri2GroupFastpages/markdown/'><button>THIS</button></a> to plan your activities!</h3>
 
 
 <html>
@@ -31,7 +32,7 @@ fetch("https://finalcptperiod4.duckdns.org/api/activities", requestOptions)
   r.forEach(ev => {
     const row = document.createElement("tr")
     const data = document.createElement("td")
-    data.innerHTML = `${ev.address}, ${ev.fun}: ${ev.activity}`
+    data.innerHTML = `${ev.activity}, ${ev.address}: ${ev.fun}`
     row.appendChild(data)
     document.getElementById("table").appendChild(row)
   })
@@ -119,9 +120,9 @@ function read_users() {
 <form action="javascript:create_user()">
  <p><label>
         Tell Us an Activity You Did!
-        <input type="text" name="activity" id="activity" placeholder="activity" required>
-        <input type="text" name="activity" id="address" placeholder="address" required>
-        <input type="text" name="activity" id="fun" placeholder="out of 10" required>
+        <input type="text" name="activity" id="activity" placeholder="Activity" required>
+        <input type="text" name="activity" id="address" placeholder="Address" required>
+        <input type="text" name="activity" id="fun" placeholder="Fun out of 10" required>
 
 
     </label></p>
@@ -136,10 +137,10 @@ function read_users() {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({activity:document.getElementById("activity").value,address:document.getElementById("address").value,fun:document.getElementById("fun").valueAsNumber})
+      body: JSON.stringify({activity:document.getElementById("activity").value,address:document.getElementById("address").value,fun:document.getElementById("fun").value})
     }).then(e => console.log(
      
-      "yay"
+     
     ));
   }
 </script>
