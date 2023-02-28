@@ -10,14 +10,14 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
 <meta property="og:description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
-<link rel="canonical" href="https://cubnavarro.github.io/Tri2GroupFastpages/activities/" />
-<meta property="og:url" content="https://cubnavarro.github.io/Tri2GroupFastpages/activities/" />
+<link rel="canonical" href="https://cubnavarro.github.io/Tri2GroupFastpages/data/activities" />
+<meta property="og:url" content="https://cubnavarro.github.io/Tri2GroupFastpages/data/activities" />
 <meta property="og:site_name" content="Rental Retreats" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Activities" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"An easy to use blogging platform with support for Jupyter Notebooks.","headline":"Activities","url":"https://cubnavarro.github.io/Tri2GroupFastpages/activities/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","description":"An easy to use blogging platform with support for Jupyter Notebooks.","headline":"Activities","url":"https://cubnavarro.github.io/Tri2GroupFastpages/data/activities"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/Tri2GroupFastpages/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://cubnavarro.github.io/Tri2GroupFastpages/feed.xml" title="Rental Retreats" /><link rel="shortcut icon" type="image/x-icon" href="/Tri2GroupFastpages/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -64,7 +64,7 @@ window.onload = wrap_img;
           </span>
         </label>
 
-        <div class="trigger"><a class="page-link" href="/Tri2GroupFastpages/_pages/Review.html">Reviews Page</a><a class="page-link" href="/Tri2GroupFastpages/markdown/">Schedule Maker</a><a class="page-link" href="/Tri2GroupFastpages/activities/">Activities</a><a class="page-link" href="/Tri2GroupFastpages/map/">Near Me Finder</a><a class="page-link" href="/Tri2GroupFastpages/data/database">Add/Explore Houses</a><a class="page-link" href="/Tri2GroupFastpages/forma/">Pick Your House!</a><a class="page-link" href="/Tri2GroupFastpages/categories/">Tags</a></div>
+        <div class="trigger"><a class="page-link" href="/Tri2GroupFastpages/_pages/Review.html">Reviews Page</a><a class="page-link" href="/Tri2GroupFastpages/markdown/">Schedule Maker</a><a class="page-link" href="/Tri2GroupFastpages/data/activities">Activities</a><a class="page-link" href="/Tri2GroupFastpages/map/">Near Me Finder</a><a class="page-link" href="/Tri2GroupFastpages/data/database">Add/Explore Houses</a><a class="page-link" href="/Tri2GroupFastpages/forma/">Pick Your House!</a><a class="page-link" href="/Tri2GroupFastpages/categories/">Tags</a></div>
       </nav></div>
 </header>
 <main class="page-content" aria-label="Content">
@@ -81,13 +81,7 @@ window.onload = wrap_img;
   </tr>
 </table>
 
-
-
-
 <script>
-
-
-
 
 var requestOptions = {
   method: 'GET',
@@ -139,14 +133,14 @@ function reset() {
 
 const resultContainer = document.getElementById("result");
   // prepare URL's to allow easy switch from deployment and localhost
-const url = "https://finalcptperiod4.duckdns.org"
+const url = "https://finalcptperiod4.duckdns.org/api/activities"
   //const url = "https://flask.nighthawkcodingsociety.com/api/users"
 const create_fetch = url + '/create';
 const read_fetch = url + '/';
 read_users();
 
-
-function read_users() {
+  // Display User Table, data is fetched from Backend Database
+  function read_users() {
     // prepare fetch options
     const read_options = {
       method: 'GET', // *GET, POST, PUT, DELETE, etc.
@@ -156,7 +150,9 @@ function read_users() {
       headers: {
         'Content-Type': 'application/json'
       },
-    };     // fetch the data from API
+    };
+
+    // fetch the data from API
     fetch(read_fetch, read_options)
       // response is a RESTful "promise" on any successful fetch
       .then(response => {
@@ -168,6 +164,7 @@ function read_users() {
             const td = document.createElement("td");
             td.innerHTML = errorMsg;
             tr.appendChild(td);
+            resultContainer.appendChild(tr);
             return;
         }
         // valid response will have json data
@@ -179,7 +176,7 @@ function read_users() {
             }
         })
     })
-      // catch fetch errors (ie ACCESS to server blocked)
+    // catch fetch errors (ie ACCESS to server blocked)
     .catch(err => {
       console.error(err);
       const tr = document.createElement("tr");
@@ -206,23 +203,50 @@ function read_users() {
 
 
 <script>
-  function create_user() {
-    fetch("https://finalcptperiod4.duckdns.org/api/activities/create", {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({activity:document.getElementById("activity").value,address:document.getElementById("address").value,fun:document.getElementById("fun").value})
-    }).then(e => console.log(
-     
-      "yay"
-    ));
+  fetch(create_fetch, requestOptions)
+      .then(response => {
+        // trap error response from Web API
+        if (response.status !== 200) {
+          const errorMsg = 'Database create error: ' + response.status;
+          console.log(errorMsg);
+          const tr = document.createElement("tr");
+          const td = document.createElement("td");
+          td.innerHTML = errorMsg;
+          tr.appendChild(td);
+          resultContainer.appendChild(tr);
+          return;
+        }
+        // response contains valid result
+        response.json().then(data => {
+            console.log(data);
+            //add a table row for the new/created userid
+            add_row(data);
+        })
+    })
+
+  function add_row(data) {
+    const tr = document.createElement("tr");
+    const activity = document.createElement("td");
+    const address = document.createElement("td");
+    const fun = document.createElement("td");
+  
+
+    // obtain data that is specific to the API
+    activity.innerHTML = data.activity; 
+    address.innerHTML = data.address; 
+    fun.innerHTML = data.fun; 
+
+    // add HTML to container
+    tr.appendChild(activity);
+    tr.appendChild(address);
+    tr.appendChild(fun);
+
+    resultContainer.appendChild(tr);
   }
+
 </script>
 
-
 </body>
-
 
 </html>
 
