@@ -61,8 +61,6 @@ function reset() {
 <table>
   <thead>
   <tr>
-    <th>User ID</th>
-    <th>New activity for this Week</th>
   </tr>
   </thead>
   <tbody id="result">
