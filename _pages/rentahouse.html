@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: base 
 permalink: /forma/
 title: Pick Your House!
 search_exclude: true 
@@ -52,22 +52,59 @@ search_exclude: true
        <option value = "5+ baths ">5+ baths</option>
 </th>
        </select>
-<th><input type = "submit" value ="Submit"></th>
+<th><button type="button" onclick="myfetch()">Fetch Data</button></th>
+<th><div class = random></div><input onclick="myFunction()" type = "button" value = Submit></th>
 </tr>   
 </table>
+<h1> Hello, Please provide the name of the house you would like to stay in?</h1>
+    <input id="userInput"> 
+    <h1 id="message"></h1>
+    <style>
+        body {background-color:aliceblue; text-align: center; font-size: medium; font-family: 'Times New Roman', Times, serif ;}
+    </style>
+    <script>
+        function myFunction() {
+            let userInput = document.querySelector("#userInput");
+            let message = document.querySelector("#message");
+            message.innerHTML = "Okay Great Choice You Will Be Staying At house 1 ";  
+        }
+    </script>
+
+<style> 
+.row { float: left; width: 33.33%; padding: 5px;}
+</style>
 <div class="row"> <!--- make a new row -->
-    <!-- each column is one-third of width -->
-    <div class="Row">
-      <img src="/images/design 1 .png" alt="design 1" style="width:20%">
-    </div>
-     <div class="Row">
-      <img src="/images/Design 2 .png" alt="Design 2" style="width:20%">
-    </div>
-     <div class="Row">
-      <img src="/images/Design 3 .png" alt="design 3" style="width:20%">
-    </div>
-   </div>
+  <!-- each column is one-third of width -->
+  <div class="column"> House 1
+    <img src="/Tri2GroupFastpages/images/design 1 .png" alt="house1" style="width:100%">
+  </div>
+   <div class="column"> House 2
+    <img src="/Tri2GroupFastpages/images/Design 2 .png" alt="house2" style="width:100%">
+  </div>
+   <div class="column"> House 3
+    <img src="/Tri2GroupFastpages/images/Design 3 .png" alt="house3" style="width:100%">
+  </div>
+  <script>
+    myfetch();{
+    fetch('https://finalcptperiod4.duckdns.org/api/houses/', {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body:JSON.stringify({
+            
+        })
+    }).then(res => {
+    return res.json()
+    })
+    .then(data => console.log(data))
+    .catch(error => consol.log('Error'))
+}
    
+  </script>
+
+
+
 
 
 </div>
