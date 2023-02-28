@@ -7,8 +7,10 @@ tags: [javascript, fetch, get, post, put]
 
 <h1>On This Day: What Happened?</h1>
 
+
 <html>
 <body>
+
 
 <table style="width:100%" id="table">
   <tr>
@@ -17,6 +19,7 @@ tags: [javascript, fetch, get, post, put]
 </table>
 
 <script>
+
 
 var requestOptions = {
   method: 'GET',
@@ -117,9 +120,9 @@ function read_users() {
 <form action="javascript:create_user()">
  <p><label>
         Tell Us Something that Happened on Your Favorite Day!
-        <input type="text" name="activity" id="activity" placeholder="activity" required>
-        <input type="text" name="activity" id="address" placeholder="address" required>
-        <input type="text" name="activity" id="fun" placeholder="fun" required>
+        <input type="text" name="activity" id="activity" placeholder="Activity" required>
+        <input type="text" name="activity" id="address" placeholder="Address" required>
+        <input type="text" name="activity" id="fun" placeholder="Fun" required>
 
 
     </label></p>
