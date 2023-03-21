@@ -81,7 +81,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      5 min read
+      7 min read
     
 </span></p>
 
@@ -165,11 +165,11 @@ window.onload = wrap_img;
 <blockquote>
 <p>Uses PRAGMA statement to read schema.</p>
 </blockquote>
-<p>Describe Schema, here is resource <a href="https://www.sqlite.org/index.html">Resource</a>- What is a database schema?</p>
+<p>Describe Schema, here is resource <a href="https://www.sqlite.org/index.html">Resource</a>- What is a database schema? A database Schema is a blue print or a plan tha make up a database. It helps make up the data elements and tables without the user.</p>
 <ul>
-<li>What is the purpose of identity Column in SQL database?</li>
-<li>What is the purpose of a primary key in SQL database?</li>
-<li>What are the Data Types in SQL table?</li>
+<li>What is the purpose of identity Column in SQL database? The purpose is to provide a identifier to each row of the table</li>
+<li>What is the purpose of a primary key in SQL database? The primary key makes a column or a certain amount of colums the idenitifies each row</li>
+<li>What are the Data Types in SQL table? Booleans, integers, strings, OOP</li>
 </ul>
 
 </div>
@@ -242,10 +242,10 @@ window.onload = wrap_img;
 <p>Uses SQL SELECT statement to read data</p>
 </blockquote>
 <ul>
-<li>What is a connection object?  After you google it, what do you think it does?</li>
-<li>Same for cursor object?</li>
-<li>Look at conn object and cursor object in VSCode debugger.  What attributes are in the object?</li>
-<li>Is "results" an object?  How do you know?</li>
+<li>What is a connection object?  After you google it, what do you think it does? A connection object is an object that represents a connection to the database and is used to allow the programmer to execute commands</li>
+<li>Same for cursor object? A cursor object allows the programmer to fetch data row by row and perform different operations</li>
+<li>Look at conn object and cursor object in VSCode debugger.  What attributes are in the object? The attributes in the conn object include many different things like varibles, row_factory and total changes</li>
+<li>Is "results" an object?  How do you know? Results is an object and you would know because it is set equal to cursor.execute()</li>
 </ul>
 
 </div>
@@ -314,8 +314,8 @@ window.onload = wrap_img;
 <blockquote>
 <p>Uses SQL INSERT to add row</p>
 <ul>
-<li>Compore create() in both SQL lessons.  What is better or worse in the two implementations? </li>
-<li>Explain purpose of SQL INSERT.   Is this the same as User <strong>init</strong>?</li>
+<li>Compore create() in both SQL lessons.  What is better or worse in the two implementations? In the create function it uses the data and takes the user input to create the users. 4.a can be used for simpler things while 4.b is used for more complex things</li>
+<li>Explain purpose of SQL INSERT.   Is this the same as User <strong>init</strong>? The SQL insert statement is udsed to insert rows and data into the database table </li>
 </ul>
 </blockquote>
 
@@ -378,9 +378,9 @@ window.onload = wrap_img;
 <blockquote>
 <p>Uses SQL UPDATE to modify password</p>
 <ul>
-<li>What does the hacked part do?</li>
-<li>Explain try/except, when would except occur?</li>
-<li>What code seems to be repeated in each of these examples to point, why is it repeated?</li>
+<li>What does the hacked part do? The hacked part checks to make sure the length of the password is atleast 2 charaters long and if it is not 2 charaters the code will assum it was hacked.</li>
+<li>Explain try/except, when would except occur? try/exept is used for errors that could offur when running the code. Except will occur when there is an error that dosen't pass though the try block of code.</li>
+<li>What code seems to be repeated in each of these examples to point, why is it repeated? It is repaerted to check if the information properly matches where it supposed to go and make sure it in the right spots.</li>
 </ul>
 </blockquote>
 
@@ -447,8 +447,8 @@ window.onload = wrap_img;
 <blockquote>
 <p>Uses a delete function to remove a user based on a user input of the id.</p>
 <ul>
-<li>Is DELETE a dangerous operation?  Why?</li>
-<li>What is the "f" and {uid} do?</li>
+<li>Is DELETE a dangerous operation?  Why? It can be dangerous because you could delet all of your data and information and it can not be recovered.</li>
+<li>What is the "f" and {uid} do? f is used to embed expressions inside of string literals. The uid is used to imput the user id that will be used in code</li>
 </ul>
 </blockquote>
 
@@ -508,8 +508,8 @@ window.onload = wrap_img;
 <blockquote>
 <p>CRUD and Schema interactions from one location by running menu. Observe input at the top of VSCode, observe output underneath code cell.</p>
 <ul>
-<li>Why does the menu repeat?</li>
-<li>Could you refactor this menu?  Make it work with a List?</li>
+<li>Why does the menu repeat? the menu repreats because it is recursive</li>
+<li>Could you refactor this menu?  Make it work with a List? yes you could refactor the menu and make a list with the values</li>
 </ul>
 </blockquote>
 
