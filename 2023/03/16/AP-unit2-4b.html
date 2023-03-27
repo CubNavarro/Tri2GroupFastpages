@@ -294,7 +294,10 @@ window.onload = wrap_img;
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>(5, 'John Mortensen', 'jm1021', 'sha256$3vr6s8bl6FyEsRSZ$fa0104dcef546567e6b5518288d5c46eb268dfacd49a54770702a7888525fdd4', '1959-10-21')
+<pre>(6, 'Caleb', 'CEN', 'password', '2006-04-14')
+(7, 'Eli', '9876', 'hello', '2005-03-21')
+(8, 'Harley', 'dog', 'dogssss', '2008-05-10')
+(9, 'Charlie', 'dog2', 'dogzzzz', '2023-01-14')
 </pre>
 </div>
 </div>
@@ -551,25 +554,6 @@ window.onload = wrap_img;
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>A new user record CEN has been created
-No uid Jm1021 was not found in the table
-The row with uid jm1021 was successfully deleted
-A new user record 9876 has been created
-A new user record dog has been created
-A new user record dog2 has been created
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
     
 
@@ -594,7 +578,7 @@ A new user record dog2 has been created
 <span class="c1"># Defines rows and headers</span>
 <span class="n">table</span> <span class="o">=</span> <span class="n">tabulate</span><span class="p">(</span><span class="n">rows</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">[</span><span class="s2">"ID"</span><span class="p">,</span> <span class="s2">"Name"</span><span class="p">,</span> <span class="s2">"User ID"</span><span class="p">])</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">table</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">table</span><span class="p">)</span><span class="o">*</span>
 </pre></div>
 
     </div>
